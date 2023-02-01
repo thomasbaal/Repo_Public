@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        * for hver side:
+          Hvilke data må vi ha i modellen for å kunne tegne opp dette skjermbildet.
+
+        * Hva kan man gjøre i dette skjermbildet og hvordan skal det vises i modellen.  
+
+        * Alle inputfelter på siden trenger et eget felt i modellen.
+        
+
+
+        * Eksempel tatt fra komplett.no
+        * Hva trenger vi i modellen for å tegne opp et skjermbilde, (produkt side: eksempel headset.)
+        *! Hva ER DET SOM VARIERER PÅ SIDEN !.
+
+
+
+            
+            
+
+
+            // eksempel med at det er flere underkategorier. "parrentId"
+                categories: [
+                    {name: 'Tv lyd & bilde', id: 1} // id fra hovedkategor
+                    {name: 'Hodetelefoner', id:2, parentId: 1} // id 2 fra kategori 1. 
+                    {name: 'Trådløse hodetelefoner', id:3, parentId: 2}
+
+                ]
+        
+        
+        */
+
+                    
+
+        const model = {
+            // tilstand app, hvem side er aktiv for øyeblikket o.s.v.
+            app: {
+                currentPage: 'productPage', // denne må oppdateres fortløpene etter hvem side som blir besøkt.
+                currentUser: 'Per',                            // scenario: 1 produkt i cart, bruker trykker "+ " på antall for å kjøpe 2, js kjører så updateView, å bruker havner tilbake på forrige side ,for modellen ikke er oppdatert.
+                                            // bruker må da trykke seg inn i cart igjen.
+            },
+            // input felter til hver "side"/nettside
+            inputs: { // hva for input felter har vi på produkt siden ?
+                productPage: { // dette er jo hva brukeren styrer ( inputs !)
+                    productId: 1, // Må lagres i modellen for å kunne huske hvem side brukeren er på i tilfelle bruker endrer på noe.
+                    searchText: '', // her kan man skrive rett inn, altså input felt.
+                    postNo: '', // også skrive rett in, altså input felt.
+                    isCompare: false, // dette er ikke en knapp, men den blir merket (en slags toggle funksjon) = endring av state.
+                    imageIndex: 2, // bruker klikker piler for å se på varianter av produkt bilde(slideshow .aka.) også noe som må endre state.
+                    selectedColor: 0, // brukeren kan velge farge inne på siden. = input.
+                }
+            },
+
+
+            // data
+            users: [
+                {name: 'per', pwd: '123'},
+            ],
+
+            orders: [
+              {
+                customer: 'Per',
+                orderLines: [
+                    {productId: 1, count: 3,},
+                    {productId: 2, count: 4,},
+                ]
+              }
+            ],
+            
+            shoppingCart: [
+                {productId: 1, count: 1, },
+                {productId: 1, count: 1, }
+            ],
+            products: [
+                    {
+                        id: 1,
+                        title: 'Sony wh-h910 trådløse hodetelefoner',
+                        description: 'Støyreduksjon med dual noise Sensor + 35 timers batteri',
+                        productnr: 1144455645,
+                        colors: [
+                            {text: 'Sort', code: 'black'},
+                            {text: 'Sort', code: '4f7183'},
+                        ],
+                        brandlogo: 'https:URL.TIL.LOGO',
+                        price: 2190, // hvis sortering på pris
+                        categoryId: 1, // hvis bruker ønsker sortering på en spesiell kategori
+                        rating: { // for nå så er det statisk data, er det ønskelig at bruker skal kunne slette ratings osv. må det inn i løkker.(liste)
+                            rating: 4.5,
+                            count: 32,
+                        }
+                    },
+                ]
+
+
+
+
+        }
+        let  feedbaksors = ['', '', '','',]
+
+
+    </script>
+</body>
+</html>

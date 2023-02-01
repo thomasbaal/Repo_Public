@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+
+
+
+        // Model
+        var value = '';
+        var checkedBunnTykk = document.getElementById("bunnTykkId");
+
+
+
+        // View
+        updateView();
+        function updateView() {
+            document.getElementById("app").innerHTML = /*HTML*/`
+            <div id="divBunn">Pizzzaaaaaa !!!!...</div>
+        Bunn:     <input id="bunnTykkId"  onchange="order(this)" type="radio" value="bunnTykk" name="bunn" />
+                  <input id="bunnTynnId" onchange="order(this)" type="radio" value="bunnTynn" name="bunn" /> <br/>
+                       
+
+          Fyll: <input id="fyllTacoId" type="radio" value="fyllTaco" name="fyll" />
+                       <input id="fyllKyllingId" type="radio" value="fyllKylling" name="fyll" />
+                       <input id="fyllPepperoniId" type="radio" value="fyllPepperoni" name="fyll" /> <br/>
+
+            
+            Størrelse: <input id="størrelseStorId" type="radio" value="stor" name="størrelse" />
+                       <input id="størrelseMiddelsId" type="radio" value="middels" name="størrelse" />
+                       <input id="størrelseLitenId" type="radio" value="liten" name="størrelse" />
+
+                       <button disabled="" onclick="order()">Order Pizza</button>
+
+                     
+ <br/>
+
+
+
+
+`;
+
+        }
+        // Controller
+        function order(x) {
+            // console.log(x.value);
+            // value = x.value;
+
+            console.log(value);
+            // if ((value == 'bunnTykk' || value == 'bunnTynn') && (value == 'fyllTaco' || value == 'fyllKylling' || 'fyllPepperoni')) console.log('ja');
+            if (checkedBunnTykk.checked) { console.log('ja'); }
+        }
+
+
+
+
+        // <label for="bunnTynnId">Tynn
+
+
+
+    </script>
+</body>
+
+</html>

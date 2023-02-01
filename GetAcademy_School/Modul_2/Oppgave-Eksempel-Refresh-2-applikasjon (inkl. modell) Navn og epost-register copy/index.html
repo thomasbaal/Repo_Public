@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/model.js"></script>
+    <script src="js/searchView.js"></script>
+    <script src="js/deleteView.js"></script>
+    <script src="js/createNewView.js"></script>
+    <script src="js/editView.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/searchController.js"></script>
+    <script src="js/deleteController.js"></script>
+    <script src="js/createNewController.js"></script>
+    <script src="js/editController.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/commonController.js"></script>
+</head>
+<body>
+    <div class="Something" id="registerApp"></div>
+
+    <script>
+        updateView()
+        function updateView() {
+           
+            
+            if(model.app.currentPage === 'search') {updateViewSearch()}
+            if(model.app.currentPage === 'edit') {updateViewEdit()}
+            if(model.app.currentPage === 'delete') {updateViewDelete()}
+            if(model.app.currentPage === 'createNew') {updateViewCreateNew()}
+
+
+        }
+
+    </script>
+</body>
+</html>

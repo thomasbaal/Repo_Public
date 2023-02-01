@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="divInfo"></div>
+
+
+    <script>
+        addPunctuation('thomasbaal@getacademy.no');
+        function addPunctuation(text) {
+
+            let checkIfGotAlpha = text.includes('@');
+            if (checkIfGotAlpha == true) { gotAlphaPosition = text.indexOf('@') }
+            charBeforeAlpha = gotAlphaPosition - 1
+            charAfterAlpha = gotAlphaPosition + 1
+
+            var sliceBeforeAlpha = text.slice(0, gotAlphaPosition)
+            var sliceAfterAlpha = text.slice(gotAlphaPosition + 1)
+            var addAll = sliceBeforeAlpha + '.' + '@' + '.' + sliceAfterAlpha
+            console.log(addAll);
+            return addAll
+
+
+
+
+
+
+
+            // var addedPunctBefore = sliceBeforeAlpha + '.';
+            // var addedPunctAfter = '.' + sliceAfterAlpha;
+            // var addAlphaBack = 
+
+            // console.log(addedPunctBefore);
+            // console.log(addedPunctAfter);
+
+            console.log(sliceBeforeAlpha);
+            console.log(sliceAfterAlpha);
+            // console.log(textBeforeAlpha);
+            // console.log(textAfterAlpha);
+            console.log(text);
+
+
+            console.log(charBeforeAlpha);
+            console.log(charAfterAlpha);
+            console.log(checkIfGotAlpha);
+            console.log(gotAlphaPosition);
+
+        }
+
+
+
+        // slice
+        // join
+
+        //--------------------------------------------- split : ---------------------------------------------
+        //         Split the characters, including spaces:
+
+        //         
+        //          let text = "How are you doing today?";
+        //          const myArray = text.split("");
+        //  shows: How,are,you,doing,today?
+        //---------
+        //         Split the words:
+        //          let text = "How are you doing today?";
+        //          const myArray = text.split(" ");
+        //    shows: How,are,you,doing,today?
+        //-------
+        //          Split the characters, including spaces:
+        //          let text = "How are you doing today?";
+        //          const myArray = text.split("");
+        // shows: H,o,w, ,a,r,e, ,y,o,u, ,d,o,i,n,g, ,t,o,d,a,y,?
+        //---------------------------------------------------------------------------------------------------   
+
+
+
+
+
+        function fixText(text) {
+            let trimmedText = text.trim() // fjerner mellomrom..
+            return trimmedText.charAt(0).toUpperCase() + trimmedText.slice(1).toLowerCase();
+        }; // returnerer trimmet tekst at characer 0 = t .toupperCase setter t til stor T. + slice ved position 1. to lowercase.
+
+        // fra UniTestingJs - Terje 01.
+        function reverseText(text) {
+            return text.split('').reverse().join('');
+
+        }
+    </script>
+
+
+</body>
+
+</html>

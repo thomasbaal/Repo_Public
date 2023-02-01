@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navn og Epost register</title>
+    <script src="js/model.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/deleteController.js"></script>
+    <script src="js/deleteView.js"></script>
+    <script src="js/editController.js"></script>
+    <script src="js/editView.js"></script>
+    <script src="js/createNewController.js"></script>
+    <script src="js/createNewView.js"></script>
+    <script src="js/searchController.js"></script>
+    <script src="js/searchView.js"></script>
+</head>
+<body>
+  <div id="emailApp"></div>
+  <div id="kunForTest"></div>
+<script>
+  updateView()
+  function updateView(){
+    // page check and select.
+    if(model.app.currentPage === 'search') {updateViewSearch()}
+    if(model.app.currentPage === 'createNew') {updateViewCreateNew()}
+    if(model.app.currentPage === 'delete') {updateViewDelete()}
+    if(model.app.currentPage === 'edit') {updateViewEdit()}
+  }
+
+  
+
+/* <h1>Notater for team oppgave.</h1> 
+    
+        <a href="https://youtu.be/1bjBr6qRLPY?t=2050">El - Linkos(createMenuHtml() fra commonView.js 35.Min in)</a>
+    <p>rule of thumb: 1-tilstand, 2-inputfelter(til hver side), 3-data(felles data) </p>
+    
+     <p>1 View pr "Hovedside"</p>
+     <p>hver side med en view-fil og en controller-fil</p>
+     <p>alle sider bruker felles datafil (model.js)</p>
+*/
+
+</script>
+
+
+
+
+    
+
+   
+</body>
+</html>

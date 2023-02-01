@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Startliste", "Startliste.csproj", "{09720558-193F-44AD-A386-B60CF4279D56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{63AC744B-3A30-4E40-B50D-2A03F13D3A1A}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\tb-19\Downloads\animals.csv = C:\Users\tb-19\Downloads\animals.csv
+		..\..\..\..\03_Resources\Test_Files_Json-Csv\startlist.csv = ..\..\..\..\03_Resources\Test_Files_Json-Csv\startlist.csv
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09720558-193F-44AD-A386-B60CF4279D56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09720558-193F-44AD-A386-B60CF4279D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09720558-193F-44AD-A386-B60CF4279D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09720558-193F-44AD-A386-B60CF4279D56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {091F07A4-0E65-4081-884D-0154D5C80463}
+	EndGlobalSection
+EndGlobal

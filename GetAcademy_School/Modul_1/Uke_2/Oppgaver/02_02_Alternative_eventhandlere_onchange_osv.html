@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<!-- <body onload="testOnLoad()"> -->
+    <p>Ferdighet 2a - Alternative eventhandlere: onchange osv.</p>
+
+    <input type="text" onchange="testOnChange()" oninput="testOnInput()" />
+
+    <p>Onkeydown-Test</p>
+
+    <input type="text" id="demo" onkeydown="knappTrykket()">
+
+    <h3 onmouseover="testOnMouseOver()" onmouseout="testOnMouseOut()">Test test test</h3>
+    <h2 id="info"></h2>
+    <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Elephant_skeleton.jpg/220px-Elephant_skeleton.jpg" /><br />
+
+    <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">Mer informasjon her</a>
+
+    <!-- += betyr å legge til
+        = betyr å skrive over noe som er der eller bare skrive inn-->
+
+
+        <style>
+            div {
+                background: yellow;
+                border: 1px solid black;
+                padding:10px;
+            }
+        </style>
+<!-- 
+        <div oncontextmenu="myFunction()" contextmenu="myMenu">
+        <p>right-click inside this box to see the context menu!</p>    
+        <menu type="context" id="myMenu">
+            <menuitem label="Refresh" onclick="window.location.reload();" icon="ico_reload.png">
+        </menuitem>
+        <menu label="Share on...">
+            <menuitem label="Twitter" icon="ico_twitter.png" onclick="window.open('//twitter.com/intent/tweet?text=' + window.location.href);"></menuitem>
+            <menuitem label="Facebook" icon="ico_facebook.png" onclick="window.open('//facebook.com/sharer/sharer.php?u=' + window.location.href);"></menuitem>
+            </menu>
+            <menuitem label="Email This Page" onclick="window.location='mailto:?body='+window.location.href;"></menuitem> -->
+
+<!-- hva er feil over ??-->
+    </div>
+        
+        
+    <script>
+
+        function knappTrykket() { //oppgave
+            alert("knapp ble inntrykket!");
+            document.getElementById("demo").style.backgroundColor = "red";
+        }
+
+        
+        // monitorEvents(window)
+        // function testOnLoad() {
+        //     document.getElementById('info').innerHTML += '<li>onload</li>';
+        // }
+
+        function testOnChange() {
+            // document.getElementById('info').innerHTML += '<li>onchange</li>';
+            // console.log(testOnChange)
+            console.log(testOnChange)
+        }
+
+        function testOnInput() {
+            // document.getElementById('info').innerHTML += '<li>oninput</li>';
+            console.log(testOnInput)
+        }
+
+        function testOnMouseOver() {
+            // document.getElementById('info').innerHTML += '<li>onmouseover</li>';
+            console.log(testOnMouseOver)
+        }
+
+        function testOnMouseOut() {
+            // document.getElementById('info').innerHTML += '<li>onmouseout</li>';
+           console.log(testOnMouseOut)
+        }
+    </script>
+</body>
+
+</html>

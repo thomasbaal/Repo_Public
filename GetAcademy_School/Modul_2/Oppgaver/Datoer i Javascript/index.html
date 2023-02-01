@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Generell Info</h3>
+    <h4>Ved visning av dato bruker man toLocaleDateString('nb-no')
+        Eksempelsvis:         
+        <br/>
+        "dateOut.innerHTML = d.toLocaleDateString('nb-no')"
+
+        <h3>Tekst visning: 01.02.2003</h3>
+
+        <h3>Tekst input: 1. iso string (d.toISOString())"2003-02-01" eller "2. " </h3>
+            eller
+        <h3></h3>
+
+    </h4>
+    <input id="inputDate" type="date"/>
+    <div id="demo"></div>
+    <div id="outputDate2"></div>
+    <div id="outputDate"></div>
+    <div id="outputDate3"></div>
+
+   
+    <script>
+//-------------------------------------------------------------------------
+const birthday = new Date(1979, 7, 25)
+console.log(birthday);
+birthday.getFullYear();      
+birthday.getMonth();         
+birthday.getDate();          
+birthday.getDay();           
+birthday.getHours();         
+birthday.getMinutes();       
+birthday.getSeconds();       
+birthday.getMilliseconds();  
+birthday.getTime();         
+
+//-------------------------------------------------------------------------
+
+
+
+//-------------------------------------------------------------------------
+// You can use an array to display the name of the weekday:
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+const d2 = new Date();
+let month = months[d2.getMonth()];
+document.getElementById("demo").innerHTML = month;
+//-------------------------------------------------------------------------
+
+
+
+//-------------------------------------------------------------------------
+//Calculating elapsed time
+// Using Date objects
+const start = Date.now();
+//
+// The event to time goes here:
+let end = '';
+        setInterval(() => {
+             end = Date.now();
+            
+        }, 50000);
+
+
+const elapsed = end - start; // elapsed time in milliseconds, her får jeg en feil
+console.log(elapsed);
+//-------------------------------------------------------------------------
+
+
+
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+
+
+
+        let dateIn = document.getElementById("inputDate");
+        let dateOut = document.getElementById("outputDate");
+        let dateOut2 = document.getElementById("outputDate2");
+
+        let d = new Date(); // Tue Aug 23 2022 17:46:40 GMT+0200 (sentraleuropeisk sommertid)
+        let day = new Date().getDay(); // 2, dag nr
+        let month2 = new Date().getMonth() // 7, måned nr, !!0 basert,dvs. januar starter med mnd "0"
+        let year = new Date().getFullYear() // 2022, aktuelt år ,4 siffer
+        console.log(dateIn.value);
+        console.log(d.getTime()); 
+
+        let nowInMs = d.getTime()
+        console.log(nowInMs); // 1661270167867
+        console.log(d.toISOString());
+
+        // setter kalender value til ISO
+        console.log(dateIn.value = d.toISOString().substr(0, 10));
+
+        console.log(d.getTime()); // svar i ms siden 01.01.1970 -  1661260149697
+        console.log(new Date(1661260149697)); // Dagens dato, Tue Aug 23 2022 15:09:09 GMT+0200
+        // minuserer under viser tid i fortiden                                        
+        console.log(new Date(1061260268172)); // Tue Aug 19 2003 04:31:08 GMT+0200
+        // bakover i tid:
+        console.log(new Date(-3432442234)); // Sat Nov 22 1969 07:32:37 GMT+0100
+
+        // Vis i div
+        dateOut.innerHTML = d.toLocaleDateString('nb-no') // 23.8.2022
+        dateOut2.innerHTML = `dag:`
+
+        let time = document.getElementById("outputDate3");
+        time.innerHTML = `Timetest: ${timeTest()}`
+
+        function timeTest() {
+            let aDate = new Date('1980, 10, 3').toLocaleDateString('nb-no')
+            
+            let bDate = new Date().toLocaleDateString('nb-no')
+            let timeBetween = bDate - aDate;
+            console.log(timeBetween);
+            console.log('---------- adate, bdate, ------------');
+            console.log(aDate);
+            console.log(bDate);
+            let calendarValue = inputDate.value
+            console.log(calendarValue.substr(0, 2));
+            console.log(calendarValue);
+            console.log(inputDate.value);
+            return new Date().toLocaleDateString()
+        }
+    </script>
+</body>
+</html>

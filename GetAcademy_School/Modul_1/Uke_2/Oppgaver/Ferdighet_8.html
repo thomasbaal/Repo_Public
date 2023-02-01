@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferdighet 8</title>
+
+    <style>
+        .border {
+            border: solid 5px;
+            border-style: solid;
+        }
+
+        .padding {
+            padding: 5px;
+        }
+
+        .margin {
+            margin: 20px;
+        }
+
+        .backgroundColor {
+            background-color: bisque;
+        }
+
+        .color {
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="valgDiv1">Mulighet for ny effekt her</div>
+    <div id="valgDiv2">Mulighet for ny effekt her</div>
+    <div id="valgDiv3">Mulighet for ny effekt her</div>
+    <div id="valgDiv4">Mulighet for ny effekt her</div>
+    <div id="valgDiv5">Mulighet for ny effekt her</div>
+
+    <input id="chkMainOpt1" type="checkbox" onchange="toggleStyle()" />
+    <label for="chkMainOpt1">Border</label>
+    <input id="chkMainOpt2" type="checkbox" onchange="toggleStyle()" />
+    <label for="chkMainOpt2">Padding</label>
+    <input id="chkMainOpt3" type="checkbox" onchange="toggleStyle()" />
+    <label for="chkMainOpt3">Margin</label>
+    <input id="chkMainOpt4" type="checkbox" onchange="toggleStyle()" />
+    <label for="chkMainOpt4">Background Color</label>
+    <input id="chkMainOpt5" type="checkbox" onchange="toggleStyle()" />
+    <label for="chkMainOpt5">Color</label>
+
+
+    <script>
+
+        function toggleStyle() {
+            var isChecked = document.getElementById('chkMainOpt1').checked;
+            console.log(isChecked);
+            document.getElementById('valgDiv1').classList.toggle('border', isChecked);
+
+
+        }
+        // Checkbox: <input type="checkbox" id="myCheck">
+
+        // <button onclick="check()">Check Checkbox</button>
+        // <button onclick="unCheck()">Uncheck Checkbox</button>
+//         <script>
+// function check() {
+//   document.getElementById("myCheck").checked = true;
+// }
+
+// function uncheck() {
+//   document.getElementById("myCheck").checked = false;
+// }
+// </script>
+
+    </script>
+
+</body>
+
+</html>

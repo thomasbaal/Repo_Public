@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Passord_Generator02": {
+      "commandName": "Project",
+      "commandLineArgs": "hei på deg"
+    }
+  }
+}

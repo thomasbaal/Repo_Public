@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #333333;
+            color:aliceblue;
+        }
+    </style>
+</head>
+<body onload="body()">
+    <h1>Quiz</h1>
+
+    <div> <b>Hvor mange bokstaver er det i bibelen?</b></div>
+    <p id="svar1" onclick="svar(this, 'feil')"> 84</p>
+    <p id="svar2" onclick="svar(this, 'feil')"> ca 3 566 500</p>
+    <p id="svar3" onclick="svar(this, 'riktig')"> 7 </p>
+
+    <div id="svarText"></div>
+
+<script>
+
+     var svarT = document.getElementById('svarText');
+
+
+    function svar(x, wrongOrCorrect){
+        if(svarT.innerHTML == ''){
+            svarT.innerHTML = `Du svarte ${x.innerHTML} det var: ${wrongOrCorrect}`;
+        }
+        else{
+           alert( 'Du har svart på dette spørsmålet ');
+        }
+
+
+      
+
+       // document.getElementById('svarText').innerHTML = 'Du svarte ' + x.innerHTML + ''+  wrongOrCorrect;
+    }
+
+</script>
+    
+</body>
+</html>

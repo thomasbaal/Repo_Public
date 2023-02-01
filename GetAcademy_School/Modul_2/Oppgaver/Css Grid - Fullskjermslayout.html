@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Css Grid - Fullskjermslayout</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    div.page {
+      height: 100vh;
+      display: grid;
+      /* grid-template-columns: ;
+   grid-template-rows: ;
+   grid-template-areas: 'header header'
+                        'menu mainContent'
+                        'menu footer'; */
+      grid-template-columns: 150px 3fr;
+      grid-template-rows: 20px 10fr 20px;
+      grid-template-areas: 'menu header'
+        'menu mainContent'
+        'footer footer';
+    }
+
+    div.header {
+      background-color: lightcoral;
+      grid-area: header;
+    }
+
+    div.menu {
+      background-color: lightblue;
+      grid-area: menu;
+    }
+
+    div.mainContent {
+      background-color: lightgoldenrodyellow;
+      grid-area: mainContent;
+    }
+
+    div.footer {
+      background-color: lightgray;
+      grid-area: footer;
+    }
+
+    @media only screen and (max-with: 1000px) {
+      div.page {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 1fr 4fr 20px;
+        grid-template-areas: 'header'
+          'menu'
+          'mainContent'
+          'footer';
+
+      }
+
+
+    }
+
+    /* div.thomasBoks {
+   background-color: goldenrod;
+   grid-area: footer;
+  } */
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="header">Header</div>
+    <div class="menu">Menu</div>
+    <div class="mainContent">MainContent</div>
+    <div class="footer">Footer</div>
+    <!-- <div class="thomasBoks">thomasBoks</div> -->
+</body>
+
+</html>

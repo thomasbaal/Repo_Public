@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">mnja</div>
+    <script>
+        //let
+        //var
+        //const
+
+        const c = 10;
+        let a = 10;
+        var b = 12;
+        var appDiv = document.getElementById('app');
+        if (a === 10) {
+            var x = 2;
+            var y = 5;
+            
+            console.log('let: ', x, 'var: ', y, 'const: ', c)
+        }
+        
+        show();
+        function show(){
+            appDiv.innerHTML = 'endret med funksjon';
+            b = y;
+            console.log('let: ',a, 'var: ', b)
+        }
+    </script>
+</body>
+
+</html>

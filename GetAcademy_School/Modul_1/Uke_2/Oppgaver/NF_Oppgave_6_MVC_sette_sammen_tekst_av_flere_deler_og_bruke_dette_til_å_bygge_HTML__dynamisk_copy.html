@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .Wrapper {
+            display: grid;
+            grid-template-columns: 300px;
+            grid-template-rows: 40px auto;
+            /* box-sizing: border-box; */
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            background-color: rgb(33, 41, 56);
+            border-radius: 10px;
+            row-gap: 5px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Wrapper" style="min-height: 230px;" id="showApp" ></div>
+     
+    <br>
+    <script>
+        // Modell
+        // let html = '';
+        // let boxSize = null;
+        // let colorChooser = null;
+        // let borderInput = null;
+        // let textInput = null;
+
+
+        
+        let boxSize = 51;
+        let colorChooser = 'green';
+        let gotBorder = 'noBorder';
+        let textInput = 'test';
+        
+       
+        
+        // view
+        colorApp();
+        function colorApp() {
+            let html = '';
+            html += /*html*/ `
+            Box Size: <input id="rangeSize" type="range" oninput="sizeOfBox(this)" type="range" min="1" max="100">
+
+            Box color: <select id="selColor" style="background-color:orange;" oninput="colorOfBox(this)">
+                    <option value="green">Green</option>   
+                    <option value="red">Red</option>   
+                    <option value="blue">Blue</option>   
+                    <option value="yellow">Yellow</option>   
+                    <option value="black">Black</option>   
+                </select>
+                Border Options: <select onchange="borderOrNot(this)" style="background-color: orange;">
+                    <option selected value="noBorder">No Border</option>
+                    <option value="5px solid black">5px Solid Black</option>
+                    <option value="10px solid black">10px Solid Black</option>
+                    <option value="15px solid black">15px Solid Black</option>
+                    </select>   
+                <hr style="width:300px">
+                Type Here: <input style="background-color: orange; font-weight:bolder;" oninput="gotTextInput(this)" type="text">
+                <div style="background-color: ${colorChooser}; width: ${boxSize}px; height: ${boxSize}px; border: ${gotBorder};" ></div>
+                
+        `
+        document.getElementById("showApp").innerHTML = html;
+
+
+
+        }
+
+        // Controller
+        function sizeOfBox(size) {
+            boxSize = size.value
+            console.log(boxSize);
+            colorApp();
+        }
+
+        function colorOfBox(color) {
+            colorChooser = color.value
+            console.log(colorChooser);
+            colorApp()
+        }
+
+        function borderOrNot(border) {
+            gotBorder = border.value
+            console.log(gotBorder);
+            colorApp()
+        }
+
+        function gotTextInput(text) {
+            textInput = text.value
+            console.log(textInput);
+        }
+
+// 
+    </script>
+</body>
+</html>

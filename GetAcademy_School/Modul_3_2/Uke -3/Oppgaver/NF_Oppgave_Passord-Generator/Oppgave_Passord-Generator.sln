@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oppgave_Passord-Generator", "Oppgave_Passord-Generator\Oppgave_Passord-Generator.csproj", "{111C9424-29B5-4D31-A6F9-E8476692C9FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Løsningsforslag_fra_Terje", "Løsningsforslag_fra_Terje\Løsningsforslag_fra_Terje.csproj", "{135BACE9-1BDC-4577-A945-894B44C2435E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{111C9424-29B5-4D31-A6F9-E8476692C9FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{111C9424-29B5-4D31-A6F9-E8476692C9FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{111C9424-29B5-4D31-A6F9-E8476692C9FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{111C9424-29B5-4D31-A6F9-E8476692C9FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{135BACE9-1BDC-4577-A945-894B44C2435E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{135BACE9-1BDC-4577-A945-894B44C2435E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{135BACE9-1BDC-4577-A945-894B44C2435E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{135BACE9-1BDC-4577-A945-894B44C2435E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1F94D3B-6C39-43E0-BD78-2BE44176F3C8}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+div {  
+width: auto;  
+text-align: center;  
+padding: 15px;  
+border: 3px solid red;  
+}  
+img {  
+max-width: 100%;  
+height: auto;  
+}  
+
+img:hover {
+    border: solid 2px red;
+}
+    </style>
+</head>
+<body>
+    <input id="imgUpload" type="file"  
+    onchange="readFile(this)" 
+    name="file" multiple
+    accept="image/*" 
+    />
+    <!-- <label for "imgUpload">Select a file:</label><br/> -->
+
+
+<img id="myImage" />
+    <script>
+// Note: The Blob.arrayBuffer() method is a newer promise-based API to read a file as an array buffer.
+//////////////////////////////////////////////////////////////////////////
+        // 1 input file  uplad.
+
+async function readFile(you_can_call_this_whatever) { // 2 asynchronous function readfile() is called with parameter from "arguments" 
+        console.log(you_can_call_this_whatever.value);                    // C:\fakepath\20130928_085908.jpg
+       
+        const byteArray = await you_can_call_this_whatever.files[0].arrayBuffer(); // 3 lager variabel byteArray, kjører await på det som er hentet fra "this"-fra input boksen.
+                                                    console.log(you_can_call_this_whatever.files[0]);                                     
+        
+        console.log(you_can_call_this_whatever.files);                      // FileList {0: File, length: 1}
+        showImage('myImage', byteArray);
+        console.log(byteArray);
+        console.log(typeof byteArray);              // object
+    }
+
+    function showImage(imageId, imageBytes) {
+        const blob = new Blob([imageBytes], {
+            type: "image/jpeg"
+        });
+        const urlCreator = window.URL || window.webkitURL;
+        const imageUrl = urlCreator.createObjectURL(blob);
+        document.getElementById(imageId).src = imageUrl;
+    }
+
+    </script>
+</body>
+</html>

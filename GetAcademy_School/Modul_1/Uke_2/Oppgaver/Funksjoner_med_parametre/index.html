@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<button onclick="createDialog(this, 'Takk for din bestilling', 'Forventer flere bestillinger', 'green', 'Ok !?')" style="background-color: coral; color: white;">Bestill</button>
+<button onclick="createDialog(this, 'Feil på Systemet', 'Beklager - Vi tar ikke mot flere bestillinger da vi ikke har lyst!', 'red', 'Greit - Eller ?')" style="background-color: coral; color: white">Utløs Feil</button>
+
+
+    <script>
+// let headline = 'Takk for din bestilling.'
+
+
+function createDialog(parbutton, headline, innertext, color, btntxt) {
+    if(parbutton.innerHTML == 'Bestill') 
+    {
+        
+    const id = Math.floor(Math.random() * 1000);
+    console.log(id);
+    document.body.innerHTML = /*html*/ `
+        <div id="${id}" style="width: 300px; color: white; grid-template-column; background-color: lightgray; border-radius: 5px; text-align: center">
+            <div style="background-color: ${color}; font-weight: bold;">${headline}</div>
+            <div style="color: black; padding:10px">${innertext}</div>
+            <button onclick="document.body.innerHTML = ''" >${btntxt}</button>    
+
+        </div>
+        
+        `
+
+    }else 
+    {
+    const id = Math.floor(Math.random() * 1000);    
+    console.log(id);
+    document.body.innerHTML = /*html*/ `
+        <div id="${id}" style="width: 300px; color: white; grid-template-column; background-color: lightgray; border-radius: 5px; text-align: center">
+            <div style="background-color: ${color}; font-weight: bold;">${headline}</div>
+            <div style="color: black; padding:10px">${innertext}</div>
+            <button onclick="document.body.innerHTML = ''" >${btntxt}</button>    
+
+        </div>
+        
+        `    
+
+    }
+   
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <button onclick="createDialogBox('Bestillingen er registrert', 'tekst ja', 'Okelidokeli', 1)">Bestill</button> -->
+    <button onclick="order()">Bestill</button>
+    <button onclick="simulateError()">Utløs Feil</button>
+
+    <script>
+        // Below - Div inside a div.
+        function createDialogBox(headline, txt, btnText, color) {
+            const id = Math.floor(Math.random() * 100);
+            document.body.innerHTML += `
+            <div id="${id}" style="
+                    background-color: lightgrey;
+                    color: ${color};
+                    border: 2px solid green;
+                    border-radius: 5px;
+                    font-family: verdena, geneva, tahoma;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 400px;
+            ">
+                <div style="
+                        background-color: ${color};
+                        color: white;
+                        width: 100%;
+                        text-align: center;
+            ">
+                    <h3>${headline}</h3>
+
+            </div>
+            <p style="padding: 10px;">
+                    ${txt}
+            </p>
+            <p>
+                    <button onclick="closeDialog(${id})" style="width: 300px">${btnText}</button>
+            </div>
+            </div>                
+            `;
+            console.log('Den har id:', id);
+        }
+
+        function closeDialog(idToClose) {
+            document.getElementById(idToClose).outerHTML = '';
+        }
+
+        function order() {
+            createDialogBox('Bestillingen er registrert',
+                'Takk for bestillingen, velkommen igjen',
+                'ok',
+                'blue');
+        }
+
+        function simulateError() {
+            createDialogBox('Error - Fy Fadeg og Masse Eggog!!.',
+                'Vi beklager det som har opstått, hade!!',
+                'forlat område NÅ!',
+                'red');
+        }
+    </script>
+</body>
+
+</html>

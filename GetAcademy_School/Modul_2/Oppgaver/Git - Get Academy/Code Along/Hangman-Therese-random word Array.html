@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="controller.js"></script>
+</head>
+
+<body>
+
+    <div id="app"></div>
+    <script>
+        //hjelpevariabelen
+        let appDiv = document.getElementById('app');
+        //model
+        let wordArray = ['ost', 'ape', 'bæsj', 'bacon', 'svor', 'ribbe', 'pinnekjøtt', 'zebra'];
+        let random = Math.floor(Math.random() * wordArray.length);
+        let randomWord = wordArray[random];
+        let guessedChar = '';
+        let randomWordArray = [];
+        let wrongGuesses = 0;
+        let wrongGuessesArray = [];
+        let randomWordLengt = randomWord.length;
+
+
+        //View
+        showChar();
+        show();
+
+        function show() {
+            let html = '<h1>Hangman</h1> ';
+
+            html += `antall gjettninger : ${wrongGuesses}<br>
+            ${randomWordArray.join('')}<hr>
+            <input type="text" oninput="guessedChar = this.value">
+            <button onclick="checkChar()">sjekk bokstav</button> <hr>
+            feil bokstaver: ${wrongGuessesArray.join('')}`
+
+
+            appDiv.innerHTML = html;
+        }
+
+
+
+
+        //controller
+        function showChar() {
+            for (let i = 0; i < randomWord.length; i++) {
+                randomWordArray.push(' _ ');
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .backColorbl {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+
+
+
+    <script>
+        // model
+        let choosenColorDiv = 'Valgt Farge';
+        let colorStartText = 'Du har valgt - ';
+        let selectBoxColor = ['selected', '', '', '', '', ''];
+        // view
+
+        let newOption = new Option('Black');
+        updateView();
+        function updateView() {
+            document.getElementById('app').innerHTML = /*HTML*/ `
+                  
+        
+        
+                  <select id="selectBox" name="dropDownName" value="choosenColorDiv" onchange="choosenColorDiv = this.value; showSelectedColor()">
+                      <option ${selectBoxColor[0]}  value="none">ingen</option>
+                      <option ${selectBoxColor[1]} value="black">Svart</option>
+                      <option ${selectBoxColor[2]} value="darkBlue">Mørk Blå</option>
+                      <option ${selectBoxColor[3]} value="lightGrey">Lys Grå</option>
+                      <option ${selectBoxColor[4]} value="lightGreen">Lys Grønn</option>
+                      <option ${selectBoxColor[5]} value="pink">Lys Rød</option>
+                  </select>
+                  
+                  <div style="background-color:${choosenColorDiv}; color: white">${colorStartText +
+                (choosenColorDiv != 'pink' ? choosenColorDiv : 'lys rød')
+                }</div>
+
+               `;
+        }
+        function showSelectedColor() {
+
+            updateView();
+        }
+
+        // controller
+        function pickAColor(x) {
+            pickedColor = x.value
+        }
+        // let selectedColor = x.value;
+        // selectedColor == 'black'
+        //   ? (choosenColorDiv =   'Sort')
+        //   : selectedColor == 'darkBlue'
+        //   ? (choosenColorDiv =   'Mørk Blå')
+        //   : selectedColor == 'lightGrey'
+        //   ? (choosenColorDiv =   'Lys Grå')
+        //   : selectedColor == 'lightGreen'
+        //   ? (choosenColorDiv =   'Lys Grønn')
+        //   : selectedColor == 'lightRed'
+        //   ? (choosenColorDiv =   'Lys Rød')
+        //   : //-------------------------------------------------------
+
+
+
+        // console.log(x);
+        // console.log(x.value); // darkBlue
+        // console.log(x.value.innerText);
+        // console.log(x.textContent);
+        // console.log(x.innerHTML); 
+
+
+        updateView();
+
+    </script>
+</body>
+
+</html>

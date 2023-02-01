@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px 10px;
+    box-sizing: border-box;
+    background-color: aquamarine;
+    width: 320px;
+}
+
+button {
+    background-color: rgb(203, 221, 125);
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+</style>
+
+
+<body>
+<div id="show"></div>
+
+<div class="wrapper"></button>
+    <button onclick="toCount(this)" id="1">1</button>
+    <button onclick="toCount(this)" id="2">2</button>
+    <button onclick="toCount(this)" id="3">3</button>
+    <button onclick="toCount(this)" id="4">4</button>
+    <button onclick="toCount(this)" id="5">5</button>
+    <button onclick="toCount(this)" id="6">6</button>
+    <button onclick="toCount(this)" id="7">7</button>
+    <button onclick="toCount(this)" id="8">8</button>
+    <button onclick="toCount(this)" id="9">9</button>
+</div>
+
+    <script>
+        let html = 'Buttons Pushed:';
+        function toCount(count) {
+             html += count.innerHTML + '-';
+
+            console.log(count.innerHTML);
+            document.getElementById("show").innerHTML = html;
+        }
+</script>
+</body>
+</html>

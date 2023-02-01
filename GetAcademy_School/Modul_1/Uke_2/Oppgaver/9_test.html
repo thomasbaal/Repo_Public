@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .round {
+            border: 5px dashed red;
+            border-radius: 5px;
+        }
+
+        .round2 {
+            border: 10px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="round" onclick="divInnhold(this)" id="div1">Noe tekst</div>
+    <button type="button" onclick="buFunc(this)" id="buId1">Klikk</button>
+    <button type="button" onclick="changeColor(this)" id="buId2">endre fargen til blue</button>
+    <button type="button" onclick="getColor(this)" id="buId3">Hent Farge</button>
+
+    <button id="changeColor" onclick="endreFarge(this)">Endre Farge hvis</button>
+    <button id="changeBorder" onclick="endreBorder(this)">Endre Border</button>
+    <button id="changeBorderBack" onclick="endreBorder2(this)">Endre tilbake Border</button>
+    <script>
+
+
+
+
+        var varDiv1 = document.getElementById("div1");
+
+        function endreBorder2(SettTilbake) {
+            varDiv1.classList.remove('round2')
+        }
+
+        function endreBorder(isClicked) {
+            // varDiv1.style.backgroundColor = 'yellow'; // funker
+            // varDiv1.style.border = '10px solid blue'; // funker
+            varDiv1.classList.add('round2')
+            console.log(varDiv1);
+        }
+
+
+        function buFunc(isClicked) {
+            var buFunc = isClicked.type
+            console.log(buFunc);
+        }
+
+        function divInnhold(isClicked) {
+            console.log(isClicked);
+            var divFullNfo = isClicked
+            console.log(divFullNfo);
+            divFullNfo.style.color = 'orange';
+        }
+        function changeColor(changeColorToBlue) {
+            var clickedElement = changeColorToBlue
+            console.log(clickedElement);
+            clickedElement.style.color = 'blue';
+            var whatColor = clickedElement.style.color
+            console.log(whatColor);
+        }
+
+        function getColor() {
+            var getColor = document.getElementById("buId2").style.color
+
+            console.log(getColor);
+
+        }
+
+    </script>
+</body>
+
+</html>

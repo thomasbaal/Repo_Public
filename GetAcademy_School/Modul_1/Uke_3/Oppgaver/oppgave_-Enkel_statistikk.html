@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+        // model
+        var sum = 0;
+        var count = 0;
+        var inputValue = '';
+        var gjennomsnitt = 0;
+        var statistikk = [];
+        // var varsel = prompt
+
+        // view
+        show();
+        function show() {
+            document.getElementById('content').innerHTML = `
+                <p>Skriv tall i feltet og få summen, gjennomsnitt og antall.</p>
+
+                Tall: <input type="number" value="${inputValue}" oninput="inputValue = this.value">
+                <button onclick="add()">Legg til</button>
+                <button onclick="reset()">Nullstill</button>               
+                <table>
+                    <tr><td>Sum:</td><td>${sum}</td></tr>
+                    <tr><td>Gjennomsnitt:</td><td>${gjennomsnitt}</td></tr>
+                    <tr><td>Antall tall:</td><td>${count}</td></tr>
+                    <tr><td>Valgte tall:</td><td>${statistikk}</td></tr>
+                    
+                   </table>
+                                    
+                `;
+        }
+                        
+        // controller
+        function add() {
+            sum += parseInt(inputValue); // er ikke dette "juks" ?
+            count++;
+            gjennomsnitt = inputValue == '' ? 'Du må skrive noe i boksen.' : sum / count;
+            statistikk.push(inputValue);
+            console.log(sum)
+            console.log(count)
+            console.log(inputValue)
+            console.log(gjennomsnitt)
+            show();
+        }
+
+        function reset() {
+       inputValue = '';
+       console.log(inputValue)
+       show();
+        }
+        
+        function array(){
+          print(statistikk);
+        }
+console.log(`${sum}, ${count}`);
+// window.location reload 
+// <tr><td>Gjennomsnitt:</td><td>${count == 0 ? '<i>NA</i>' : sum / count}</td></tr>
+//    <button onclick="array()">Se inputValues</button>
+
+    </script>
+</body>
+</html>

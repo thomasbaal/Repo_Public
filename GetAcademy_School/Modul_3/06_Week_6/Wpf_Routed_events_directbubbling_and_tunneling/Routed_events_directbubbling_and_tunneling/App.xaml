@@ -1,0 +1,9 @@
+﻿<Application x:Class="Routed_events_directbubbling_and_tunneling.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Routed_events_directbubbling_and_tunneling"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

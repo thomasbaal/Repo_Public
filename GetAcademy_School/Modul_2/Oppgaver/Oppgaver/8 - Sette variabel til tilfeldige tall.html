@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Ferdighet 7a - Sette variabel til tilfeldig tall</p>
+    <div id="resultat"></div>
+    <!--
+    Last siden på nytt for nye tall.
+    Endre tallet 10 på linje 20 og 21 til noe annet. Hva blir annerledes?
+    Endre tallet 100 på linje 20 og 21 til noe annet. Hva blir annerledes?
+    Ta bort Math.floor() på linje 20 og 21. Hva blir forskjellen?
+     -------------------------------------------------------------------------
+    thomas - Math.random er en funksjon i seg selv som gir random mummeret fra 0 til max 0.999999 o.s.v. - Aldri! så høyt som 1.
+    tallA og tallB med 100 er lagt til for å,i dette tilfelle aldri gå under 100 totalt:
+
+    Note: Math.random() always returns a number lower than 1.
+    Note: JavaScript numbers are always stored as double precision floating point        numbers, following the international IEEE 754 standard.
+    Note: Math.floor() rounds a number DOWN to the nearest integer:    
+    ---------------------------------------------------------------------
+    Test: satt * til 0 viser kun runde tall fks 100 + 100 i web vindu, ingen desimaler til tross for at det console.log sier at det er
+    -->
+
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        calculate();
+
+        function calculate() {
+            var resultatP = Math.floor(Math.random() * 100) + 1;
+            var tallA = 100 + (Math.random() * 10); // Note: kalkulerer inne i parantesen,
+            var tallB = 100 + Math.floor(Math.random() * 10);
+            var sum = tallA + tallB;
+            var differense = tallA - tallB;
+            var produkt = tallA * tallB;
+            var kvotient = tallA / tallB;
+            resultatDiv.innerHTML = '' +
+                tallA + '+' + tallB + '=' + sum + '<br/>' +
+                tallA + '-' + tallB + '=' + differense + '<br/>' +
+                tallA + '*' + tallB + '=' + produkt + '<br/>' +
+                tallA + '/' + tallB + '=' + kvotient;
+            console.log(Math.random());
+            console.log(resultatP);
+            console.log('TallA:', tallA);
+            console.log('TallB:', tallB);
+        }
+    </script>
+</body>
+
+</html>

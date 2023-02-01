@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.1.css">
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.19.1.js"></script>
+    <script src="lib-works.js"></script>
+
+    <script>
+// Orginal fra Qunitjs.com ---------------------------------------------
+        // function add(a, b) {
+        //     return a + b;
+        // }
+
+        // QUnit.module('add', function() {
+        //     QUnit.test('two numbers', function(assert) {
+        //     assert.equal(add(1, 2), 3);
+        //     });
+        // });
+// --------------------------------------------------------------------
+
+
+
+
+        QUnit.test("snu tekst - Terje", function (assert) {
+            let actual = reverseText('Terje');
+            let expected = 'ejreT';
+            assert.equal(actual, expected);
+        });
+
+    // let actual : Den Verdien som sendes inn for test
+    // let expected: forventet verdi som kommer i retur (hvis return er brukt!?)
+    // assert.equal(actual, expected); : sjekker om verdien actual og expected er like.
+    </script>
+</body>

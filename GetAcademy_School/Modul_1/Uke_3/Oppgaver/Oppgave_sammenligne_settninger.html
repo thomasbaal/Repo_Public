@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+
+// model
+let textValue1= '';
+let textValue2 = '';
+let textValue3 = '';
+let testResult = '';
+let sorterTextValue = '';
+
+
+
+// viewport
+updateView();
+function updateView() {
+
+    
+    document.getElementById("app").innerHTML = /*HTML*/ `
+    
+    <div id="infoDiv">${testResult}</div>
+    <div id="sorterDiv">${sorterTextValue}</div>
+
+    
+    <input type="text" oninput="textValue1 = this.value" value="${textValue1}">
+    <input type="text" oninput="textValue2 = this.value" value="${textValue2}">
+    <input type="text" oninput="textValue3 = this.value" value="${textValue3}">
+    <button onclick="test()">sjekk</button>
+    <button onclick="sorter()">sorter</button>
+    
+    
+    `
+}
+
+
+
+
+
+// controller
+ function test(){
+     
+     
+    //  console.log(textValue2);
+     if (textValue1 == textValue2) testResult += 'Tekst 1 og 2 er like<br/>'; //
+        if (textValue1 != textValue2)
+          testResult += '<del>Tekst 1 og 2 er ikke like</del><br/>'; // The <del> tag defines deleted text. Browsers will usually strike a line.
+
+        //if (textValue1 == textValue2) testResult += 'Tekst 1 og 2 er like<br/>';
+        //else testResult += '<del>Tekst 1 og 2 er like</del><br/>';
+
+        if (textValue1 == textValue3) testResult += 'Tekst 1 og 3 er like<br/>';
+        if (textValue1 != textValue3)
+          testResult += '<del>Tekst 1 og 3 er ikke like</del><br/>'; 
+        if (textValue3 == textValue2) testResult += 'Tekst 2 og 3 er like<br/>';
+        if (textValue3 != textValue2)
+          testResult += '<del>Tekst 2 og 3 er ikke like</del><br/>';
+
+     updateView();
+ }
+
+function sorter(){
+    // Må sjekk mot '' først,
+
+    // if (textValue1 == '' || textValue2 == '') 
+    // if(textValue1 === '')
+
+
+    // textValue1 < textValue2 ? sorterTextValue = textValue1 : sorterTextValue = textValue2   // er a lavere en b = true. (textValue1=a, textValue2=b)
+    // textValue1 < textValue3 ? sorterTextValue = textValue1 : sorterTextValue = textValue3                                     
+    // textValue2 < textValue3 ? sorterTextValue += textvalue2 : sorterTextValue += textValue3
+
+
+    updateView();
+}
+
+
+
+
+
+    // <input id="inputText2" type="text" oninput="textValue2 = this.value" value="Pål"> 
+    // <input id="inputText3" type="text" oninput="textValue3 = this.value" value="Espen">
+    // <input id="inputText1" type="text" oninput="textValue1 = this.value" value="Per">
+    </script>
+</body>
+</html>

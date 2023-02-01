@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMastah</title>
+</head>
+
+<body>
+    <h1>QuizMastah!</h1>
+
+    <h2>Ze Quiz.</h2>
+
+    <h2>Hvor mange innebyggere har Norge ? (Ca da...)</h2>
+
+    <ul>
+        <li onclick="svar1(this)">5,130,000</li>
+        <li onclick="svar2(this)">5,580,000</li>
+        <li onclick="svar3(this)">5,970,000</li>
+    </ul>
+
+
+
+    <script>
+        function svar1(svarAlt1) {
+            svarAlt1.innerHTML = 'Feil';
+        }
+        function svar2(svarAlt2) {
+            svarAlt2.innerHTML = 'Riktig'
+            alert(`👏 Riktig ! 👏`)
+        }
+        function svar3(svarAlt3) {
+            svarAlt3.innerHTML = 'Feil';
+        }
+
+
+    </script>
+
+</body>
+
+</html>

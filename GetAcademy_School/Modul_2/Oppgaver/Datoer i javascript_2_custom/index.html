@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="viewTask.js"></script>
+    <script src="model.js"></script>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+    body{
+        background-color: rgb(110, 167, 218);
+    }
+        table, tr, th, td{
+    border: 1px solid;
+    color: white;
+    background-color: 	rgb(37, 34, 34);
+    margin: 5px;
+    padding: 5px;
+    font-size: small;
+    }
+
+    table {
+        border-radius: 5px;
+        width: auto;
+    }
+
+
+    </style>
+</head>
+<body>
+        <div id="taskApp"></div>
+      
+    <script>
+        updateView()
+        function updateView() {
+            if(model.app.currentPage === 'taskView'){updateViewViewTask()};
+
+        }
+//   ❌❎✅
+    </script>
+</body>
+</html>

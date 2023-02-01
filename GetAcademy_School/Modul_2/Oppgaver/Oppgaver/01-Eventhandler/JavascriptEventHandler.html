@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Eventhandlers</title>
+</head>
+
+<body onload="loading()">
+    <!--
+        Onclick
+        OnmouseOver
+        OnMouseOut
+        oninput
+        onchange
+        onload
+    -->
+
+    <!-- Eventhandler kan sjekkes ved å inspisere web siden-->
+
+    <button onclick="clickMe()"> Klikk på meg </button>
+    <button onclick="displayDate()">Så du vil vite dagens dato? </button>
+    <p id="date"></p>
+    <h1 onmouseover="over()" onmouseout="out()">Dra musepekeren over her</h1>
+    <!-- Setning over er det lagt in 2 funksjoner/calls i en setning-->
+
+    <input type="text" oninput="inputText()">
+    <input type="text" onchange="changeText()">
+
+
+    <script>
+        function clickMe() {
+            console.log('Du trykket på knappen du')
+        }
+        function over() {
+            console.log('Du dro musepekeren over teksten du')
+        }
+        function out() {
+            console.log('Du dro vekk musepekeren du')
+        }
+        function inputText() {
+            console.log('Du skriver i boksen du')
+        }
+
+        function changeText() {
+            console.log('Du har skrevet i boksen ferdig')
+        }
+        function displayDate() {
+            document.getElementById('date').innerHTML = Date();
+        }
+        function loading() {
+            alert('Du har lastet inn siden')
+        }
+    </script>
+</body>
+
+</html>

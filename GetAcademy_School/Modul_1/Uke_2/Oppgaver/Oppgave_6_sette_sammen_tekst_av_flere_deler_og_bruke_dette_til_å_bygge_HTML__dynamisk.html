@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper {
+        display: grid;
+        grid-template-columns: 300px;
+        grid-template-rows: 40px;
+        background-color: lightgray;
+        width: 300px;
+        min-height: 410px;
+        margin: 5px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    input {
+        background-color: bisque;
+        width: auto;
+        border: solid black 3px;
+        border-radius: 5px;
+    }
+
+    select {
+        background-color: bisque;
+        width: auto;
+        border: solid black 3px;
+        border-radius: 5px;
+    }
+
+    hr {
+        width: 300px;
+    }
+
+    /* .show {
+        min-height: 50px;
+        align-content: center;
+    } */
+</style>
+<body>
+    <div class="wrapper">
+        <input oninput="showDiv()" id="sliderSize"type="range" min="1" max="300" step="10" > 
+        <br>
+        <label for="sliderSize">Box Size</label> 
+        <hr>
+        <br>
+        <input oninput="showDiv()" id="textInput" type="text" value="thomas">
+        <hr>
+        <br>
+        <select onchange="showDiv()" id="colorChanger">
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option selected value="red">Red</option>
+            <option value="yellow">Yellow</option>
+        </select>
+        <br>
+        <label for="colorChanger">Box Color</label>
+        <hr>
+        <select onchange="showDiv()" id="borderOrNot">
+            <!-- <option value="withBorder">With Border</option> -->
+            <option value="3px solid black">With Border</option>
+            <option selected value="">No Border</option>
+        </select>
+        <br>
+        <label for="borderOrNot">Border arround box ?</label>
+        <br>
+        <select onchange="showDiv()" id="borderRadius">
+        <option selected value="">No Corner Smoothing</option>
+        <option value="5px">5px Corner Radius</option>
+        </select>
+        <br>
+        <label for="borderRadius">Border Corner Smoothing ?</label>
+        
+        <hr>
+        <div id="show"></div>
+    </div>
+
+    <!-- <div style="width: ;" ></div> -->
+<!-- <div style="border: 3px solid black; border-radius: 5px;" >testing testign </div> -->
+    
+    <script>
+        let sliderSize = document.getElementById("sliderSize");
+        let sliderValue = sliderSize.value;
+
+        let textInput = document.getElementById("textInput");
+        let textInputValue = textInput.value;
+
+        let colorChanger = document.getElementById("colorChanger");
+        let colorChooser = colorChanger.value;
+
+        let borderOrNot = document.getElementById("borderOrNot");
+        let borderValue = borderOrNot.value;
+
+        let radiusOrNot = document.getElementById("borderRadius");
+
+        let result = document.getElementById("show");
+        let showResult = result.innerHTML;
+
+       
+        // console.log(sliderValue);
+        // console.log(textInputValue);
+        // console.log(colorChooser);
+        // console.log(borderValue);
+
+
+       
+
+
+        showDiv();
+        function showDiv() {
+            showResult = '';
+            showResult += '<div style="'
+            + 'background-color: ' + colorChanger.value + ';'
+            + 'width: ' + sliderSize.value + 'px' + ';'
+            + 'height: ' + sliderSize.value + 'px' + ';'
+
+            // if(borderOrNot.value = 'withBorder') 
+            // {
+            // showResult += 'border: ' + '1px ' + 'solid ' + 'black ' + ';'
+            // }else {console.log('No Border Here !');}
+            + 'border: ' + borderOrNot.value + ';'    
+            + 'border-radius: ' + radiusOrNot.value + ';'
+            + '">'
+            + textInput.value
+            + '</div>'
+            
+            document.getElementById("show").innerHTML = showResult;
+            console.log(showResult);
+        }
+    </script>
+</body>
+</html>

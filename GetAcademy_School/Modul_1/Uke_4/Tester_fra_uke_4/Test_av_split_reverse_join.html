@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html>
+
+    <body>
+
+        <h1>JavaScript Strings</h1>
+        <h2>The split() Method</h2>
+
+        <p>split() splits a string into an array of substrings, and returns the array:</p>
+
+        <p id="demo"></p>
+        <p id="demoJoinedArray"></p>
+        <p id="demoReversedArray"></p>
+
+        <script>
+            let text = "How are you doing today?";
+            let fruits = ["Banana", "Orange", "Apple", "Mango"];
+            let joinedArray = fruits.join(); // Banana,Orange,Apple,Mango
+            let reversedArray = fruits.reverse(); // Mango,Apple,Orange,Banana
+
+            const splitArray = text.split(" "); // (5) ['How', 'are', 'you', 'doing', 'today?']
+
+
+
+            document.getElementById("demo").innerHTML = splitArray;
+            document.getElementById("demoJoinedArray").innerHTML = joinedArray;
+            document.getElementById("demoReversedArray").innerHTML = reversedArray;
+            console.log(splitArray);
+
+
+
+
+        </script>
+
+    </body>
+
+    </html>
+
+</body>
+
+</html>

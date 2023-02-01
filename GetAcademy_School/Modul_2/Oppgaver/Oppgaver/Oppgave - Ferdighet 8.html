@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    /* .myStyle {
+        background-color: coral;
+        padding: 16px;
+    } */
+
+    .border {
+        border: solid 5px;
+        border-style: solid;
+    }
+
+    .padding {
+        padding: 5px;
+    }
+
+    .margin {
+        margin: 20px;
+    }
+
+    .backgroundColor {
+        background-color: bisque;
+    }
+
+    .color {
+        color: blueviolet;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="divNr1">Class toggle me please</div> <br />
+    <div id="divNr2">Class toggle me also !😢</div><br />
+
+
+
+    <input id="opt1" type="checkbox" checked="true" onchange="toggleStyle1()" />
+    <label for="opt1">Valg-Første Div</label>
+
+    <input id="opt2" type="checkbox" onchange="toggleStyle1()" />
+    <label for="opt2">Valg-Andre Div</label>
+    <br />
+    <input id="chk1" type="checkbox" onchange="toggleStyle1()" />
+    <label for="chk1">border</label>
+    <input id="chk2" type="checkbox" onchange="toggleStyle2()" />
+    <label for="chk2">padding</label>
+    <input id="chk3" type="checkbox" onchange="toggleStyle3()" />
+    <label for="chk3">margin</label>
+    <input id="chk4" type="checkbox" onchange="toggleStyle4()" />
+    <label for="chk4">backgroundColor</label>
+    <input id="chk5" type="checkbox" onchange="toggleStyle5()" />
+    <label for="chk5">color</label>
+
+    <script>
+        var selected = document.getElementById('opt1').checked;
+
+        function toggleStyle1() {
+            var isChecked = document.getElementById('chk1').checked;
+            document.getElementById('divNr1').classList.toggle('border')
+        }
+        function toggleStyle2() {
+            var isChecked = document.getElementById('chk2').checked;
+            document.getElementById('divNr1').classList.toggle('padding')
+        }
+        function toggleStyle3() {
+            var isChecked = document.getElementById('chk3').checked;
+            document.getElementById('divNr1').classList.toggle('margin')
+        }
+        function toggleStyle4() {
+            var isChecked = document.getElementById('chk4').checked;
+            document.getElementById('divNr1').classList.toggle('backgroundColor')
+        }
+        function toggleStyle5() {
+            var isChecked = document.getElementById('chk5').checked;
+            document.getElementById('divNr1').classList.toggle('color')
+        }
+
+        // console.log(selected, isChecked);
+    </script>
+
+</body>
+
+</html>

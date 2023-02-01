@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+        <meta charset="utf-8">
+        <title>Test Suite</title>
+        <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.1.css">
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.19.1.js"></script>
+    <script src="login.js"></script>
+
+    <script>
+
+QUnit.test("valid login", function (assert) {
+    userName = 'thomas';
+    passWord = '1';
+    // isLoggedIn = true;
+    logIn();
+    // assert.equal(errMsg, null);
+    assert.equal(isLoggedIn, true);
+    // assert.equal(screen, 'main');
+
+
+
+});
+
+    </script>
+</body>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+table, tr, th, td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 4px;
+}
+
+th {
+    background-color: darkblue;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: antiquewhite;
+}
+
+
+</style>
+</head>
+<body>
+    <table id="tasksTable">
+
+    </table>
+    <br/>
+    Navn på oppgave: <br/>
+    <input id="taskDescription" oninput="taskDescription=this.value"type="text"/> 
+    <br/>
+    <p></p>
+    Hvem har ansvaret for oppgaven: <br/>
+    <input id="userOfTask" oninput="taskOwner=this.value" type="text"/><button onclick="addTask()">Legg til oppgave</button>
+    
+    <script>
+
+        let tasks = [
+            {id: '', description: 'Handle til middag', isDone: true, editMode: false, dateCompleted: '11.08.2022', responsibleUser: 'Andreas'},
+            {id: '', description: 'Lage middag', isDone: false, editMode: false, dateCompleted: '', responsibleUser: ''},
+            {id: '', description: 'Spise middag', isDone: false, editMode: false, dateCompleted: '', responsibleUser: ''}
+        ]
+
+
+        function addTask() {
+            let taskDescriptionInput = document.getElementById("taskDescription");
+            let taskOwnerInput = document.getElementById("userOfTask");
+            tasks.push({id: '', description: taskDescriptionInput.value, isDone: false, editMode: false, dateCompleted: '', responsibleUser: taskOwnerInput.value })
+
+            show()
+        }
+
+    show();
+    function show() {
+        let tasksTable = document.getElementById("tasksTable");
+        let html = '';
+        // let rowHtml = '';
+        html = `
+            <tr>
+                <th>Oppgave</th>
+                <th>Gjort</th>
+                <th>Dato Utført</th>
+                <th>Ansvarlig for oppgaven</th>
+                <th>Slett / Rediger</th>
+            </tr>
+            `;
+
+        for(let i = 0; i < tasks.length; i++) {
+            html += createHtmlRow(i);
+        }
+        // console.log(html);
+       
+        tasksTable.innerHTML = html;
+    }
+
+    function createHtmlRow(i) {
+        const task = tasks[i];
+        const checkedHtml = tasks[i].isDone ? 'checked="checked"' : '';
+        tasks[i].id = i;
+        if(!task.editMode){  return  `
+           
+                        <tr>
+                            <td>${task.description}</td>
+                            <td><input onchange="changeIsDone(this, ${i})" type="checkbox" ${checkedHtml} /></td>
+                                <td><input disabled value="${task.dateCompleted ? task.dateCompleted : ''}" /> </td>
+                                <td><input disabled value="${task.responsibleUser ? task.responsibleUser : ''}" /> </td>
+                                <td><button onclick="deleteTask(${i})">Slett</button>
+                                <button onclick="editTask(${i})">Rediger</button> </td>
+                        </tr>
+                        `;
+        } else {
+            return `
+                <tr>
+                    <td>${task.description}</td>
+                    <td><input onchange="changeIsDone(this, ${i})" type="checkbox" ${checkedHtml} /></td>
+                    <td>
+                        <input id="inputEditDescription${i}" type="text" value="${tasks[i].description}" />
+                        <input value="${task.responsibleUser ? task.responsibleUser : ''}" />
+                        
+                        <button onclick="updateTask(${i})">Oppdater</button>
+                    </td>
+                </tr>
+            
+            `
+
+        }
+        
+
+       
+    }
+
+    function changeIsDone(checkbox, index) {
+        tasks[index].isDone = checkbox.checked;
+        show()
+    }
+
+    function deleteTask(index) {
+        tasks.splice(index, 1)
+        show()
+    }
+
+    function editTask(index) {
+        tasks[index].editMode = true;
+        show()
+    }
+
+    function updateTask(index) {
+        const id = `inputEditDescription${index}`
+        let inputEditId = document.getElementById(id)
+        tasks[index].description = inputEditId.value
+        // sett tilbake til editMode = false
+        tasks[index].editMode = false;
+        show()
+
+    }
+
+
+/*
+
+ <tr>
+            <td>${tasks[i].description}</td>
+
+ <td>    
+            <input onchange="changeIsDone(this, ${i})"type="checkbox" ${checkedHtml}/></td>
+            <button onclick="deleteTask(${i})">Slett</button>
+            <button onclick="editTask(${i})">Rediger</button>
+        </td>
+        </tr>
+
+*/
+
+
+    </script>
+</body>
+</html>

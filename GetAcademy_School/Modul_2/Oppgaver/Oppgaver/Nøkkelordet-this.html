@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nøkkelordet this</title>
+</head>
+
+<body>
+<p id="test">står noe tekst her ja</p>
+<!-- <button onclick="buttonclick()">Clik me plox</button> -->
+
+
+    <style>
+        /* tr=tableRows, th=tableHeader, td=tableCell  */
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+    </style>
+
+    <table id="myTable" style="background-color: rgb(216, 236, 248);">
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+            <th>Header 4</th>
+        </tr>
+        <tr>
+            <!-- Trenger forøvrig ikke id-->
+            <td id="cell1" onmouseover="this.innerText='x'" onmouseout="this.innerText='o'">o</td>
+            <td id="cell2" onmouseover="this.innerText='x'" onmouseout="this.innerText='o'">o</td>
+            <td id="cell3" onmouseover="this.innerText='x'" onmouseout="this.innerText='o'">o</td>
+            <td id="cell4" onmouseover="this.innerText='x'" onmouseout="this.innerText='o'">o</td>
+            
+        </tr>
+        <tr>
+            <td id="cell5" onmouseover="this.innerText='x'" onmouseout="this.innerText='o'">o</td>
+            <td id="cell6" onmouseover="this.innerText='x'" onmouseout="this.innerText='o'">o</td>
+            <td id="cell7" onmouseover="this.innerText='x'" onmouseout="this.innerText='o'">o</td>
+            <td id="cell8" onmouseover="this.innerText='x'" onmouseout="this.innerText='o'">o</td>
+        </tr>
+        <tr>
+            <td id="cell9" onmouseover="this.innerText='x'" onmouseout="this.innerText='o'">o</td>
+            <td id="cell10" onmouseover="this.innerText='x'" onmouseout="this.innerText='o'">o</td>
+            <td id="cell11" onmouseover="this.innerText='x'" onmouseout="this.innerText='o'">o</td>
+            <td id="cell12" onmouseover="this.innerText='x'" onmouseout="this.innerText='o'">o</td>
+
+        </tr>
+
+    </table>
+    <script>
+
+
+
+
+        // function onmouseover(){
+        // }
+        // function onmouseover(){
+        //     document.getElementById("cell1").innerHTML = "x"
+        // }
+//     var myTable = document.getElementById('myTable');
+// myTable.rows[0].cells[1].innerHTML = 'Hello';
+
+    //  onmouseover"doSomethingA(this)">A</button>
+    </script>
+</body>
+
+</html>

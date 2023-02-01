@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+        .grid-container {
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 150px 250px ;
+            
+            width: 450px;
+            padding: 10px;
+            grid-gap: 10px;
+            background: linear-gradient(-45deg, #111110, #363435, #727575, #aaddcc);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: white;
+            border: 3px solid black;
+            border-radius: 10px;
+            
+        }
+
+        .separate {
+            grid-row-start: 4;
+            grid-row-end: 5;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            width: 430px;
+            margin-left: 0px;
+            margin-right: 0px;
+            height: 3px;
+            background-color: #f5ac0d;
+        }
+
+        input, button {
+            background-color: coral;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            color: white;
+            background-color: rgb(114, 54, 33);
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="mvcApp"></div>
+
+    <script>
+// Model
+firstName = null;
+lastName = null;
+age = null;
+messageText = '';
+arrNames = [];
+
+
+const object = 
+{
+    nameinputs: 
+    {
+        firstname: '',
+        lastname: '',
+        age: '',
+    }
+
+}
+// View
+
+showMain();
+        function showMain() {
+            html = '';
+            html += /*html*/ `
+    <div class=grid-container>
+        <div>First Name: </div>
+        <input onchange="firstName = this.value" type="text" value="${firstName || ''}">
+        <div>Last Name: </div>
+        <input onchange="lastName = this.value" type="text">
+        <button onclick="registerName()" >Register Name</button>
+        <div>${messageText}</div>
+        <div>Age: ${age || ''}</div> <input oninput="registerAge(this)"type="range" min:1 max:100 value="${age || ''}">
+        <div class="separate"></div>
+        <div></div>
+        
+    </div>
+            `
+
+            document.getElementById("mvcApp").innerHTML = html;
+        }
+console.log(firstName);
+console.log(lastName);
+
+console.log(age);
+console.log(arrNames);
+// Controller
+
+function registerName() {
+    if(!firstName || !lastName)
+    {
+      messageText = 'Need Firstname and Lastname please'
+      showMain()
+    } else {
+        messageText = `Name Registered as: ${firstName} ${lastName}` 
+
+        object.nameinputs.firstname = firstName;
+        object.nameinputs.lastname = lastName;
+        firstName = '';
+        lastName = '';
+    showMain()    
+    }
+}
+
+function registerAge(rangeage) {
+age = rangeage.value
+console.log(age);
+showMain();
+}
+    </script>
+</body>
+</html>

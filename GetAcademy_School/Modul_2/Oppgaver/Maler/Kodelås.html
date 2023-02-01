@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Kodelås</title>
+
+    <style type="text/css">
+        .grid-container {
+            display: grid;
+            grid-template-columns: 50px 50px 50px;
+            background-color: burlywood;
+            background-size: 170px;
+            padding: 10px;
+            column-gap: 2px;
+            row-gap: 2px;
+        }
+
+        .grid-items {
+            background-color: bisque;
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 30px;
+            text-align: center;
+
+
+        }
+
+        .grid-items-display {
+
+            background-color: bisque;
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+
+
+
+
+
+
+    <script>
+
+
+
+        // model
+        let secretNumber = 1392;
+        let guessNumber = '';
+        let addedNumber = '0';
+        let displayNumber1 = '0';
+        let displayNumber2 = '0';
+        let displayNumber3 = '0';
+
+        // view
+        updateView();
+        function updateView() {
+
+            displayNumber1 = addedNumber;
+            document.getElementById('app').innerHTML = /*HTML*/ `
+
+            <div class="grid-container">
+
+                <div id="display1" class="grid-items-display">${displayNumber1}</div>
+                <div id="display2" class="grid-items-display">${displayNumber2}</div>
+                <div id="display3" class="grid-items-display">${displayNumber3}</div> 
+                          
+                <div class="grid-items"onclick="addCharacter(this)">1</div>
+                <div class="grid-items"onclick="addCharacter(this)">2</div>
+                <div class="grid-items"onclick="addCharacter(this)">3</div>
+            
+                <div class="grid-items"onclick="addCharacter(this)">4</div>
+                <div class="grid-items"onclick="addCharacter(this)">5</div>
+                <div class="grid-items"onclick="addCharacter(this)">6</div>
+            
+                <div class="grid-items"onclick="addCharacter(this)">7</div>
+                <div class="grid-items"onclick="addCharacter(this)">8</div>
+                <div class="grid-items"onclick="addCharacter(this)">9</div>
+                
+                <div class="grid-items"onclick="addCharacter(this)"></div>
+                <div class="grid-items"onclick="addCharacter(this)">0</div>
+                <div class="grid-items"onclick="clear()">cl</div>
+            
+               
+                `
+        }
+
+        //controller
+        function addCharacter(x) {
+            addedNumber = x.innerHTML
+            if (displayNumber1 == '0' && displayNumber2 == '0' && displayNumber3 == '0') { displayNumber1 = addedNumber };
+            if (displayNumber1 != '0' && displayNumber2 == '0' && displayNumber3 == '0') { displayNumber2 = addedNumber };
+
+            console.log(addedNumber);
+            console.log(displayNumber1);
+
+
+            updateView();
+        }
+
+        function clear() {
+            displayNumber1 = '0';
+            displayNumber2 = '0';
+            displayNumber3 = '0';
+            console.log(displayNumber1);
+
+
+            updateView();
+        }
+
+    </script>
+</body>
+
+</html>

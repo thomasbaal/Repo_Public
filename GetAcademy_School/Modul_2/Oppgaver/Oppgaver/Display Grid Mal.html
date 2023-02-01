@@ -1,0 +1,53 @@
+<style>
+    #root {
+        padding: 5px;
+        background-color: black;
+        width: 240px;
+        height: 280px;
+    }
+
+    #main {
+        display: grid;
+        grid-template-columns: 20vw auto 20vw;
+        grid-template-rows: 15vh auto;
+        grid-template-areas: "header header header"
+            "leftSB content rightSB";
+    }
+
+    #header {
+        grid-area: header;
+        background: gray;
+
+    }
+
+    #leftSB {
+        grid-area: leftSB;
+        background: skyblue;
+        height: 85vh;
+    }
+
+    #rightSB {
+        grid-area: rightSB;
+        background: steelblue;
+    }
+
+    #content {
+        grid-area: content;
+        background: #ddd;
+    }
+
+    div {
+        text-align: center;
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <div id="header">header</div>
+        <div id="rightSB">right sidebar</div>
+        <div id="leftSB">left sidebar</div>
+        <div id="content">content</div>
+    </div>
+</body>

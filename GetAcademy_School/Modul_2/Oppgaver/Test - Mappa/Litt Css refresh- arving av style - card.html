@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .card {
+        width: 400px;
+        border: solid 1px darkgray;
+        margin: 10px;
+
+    }
+
+    .header {
+        color: black;
+        text-align: center;
+        font-size: x-large;
+    }
+
+    .grønn {
+        background-color: rgb(167, 236, 167);
+    }
+
+    .coral {
+        background-color: coral;
+    }
+
+    .cardinner {
+        padding: 10px;
+        background-color: lightblue;
+    }
+
+    .kroppsdeler {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+</style>
+
+<body>
+    <h1>oppmerksom på arving av classlist/ eller når div avslutter eller ikke</h1>
+    <h1>Css Refresh</h1>
+    <div id="cards">
+        <!-- Note flere "åpne diver under før avslutt, som viser han kan sette 
+        flere class styles samtidig."-->
+
+        <div class="card">
+            <div class="header grønn" onclick="showOrderList()">Order List...</div>
+            <div id="cardOrderList"></div> <!-- det som blir sendt hit arver class ovenifra-->
+        </div>
+
+        <div class="card">
+            <div class="header coral" onclick="showGame()">The Game</div>
+            <div id="theGame"></div>
+
+
+        </div>
+        <!-------------------------------- Script Start ------------------------------>
+        <script>
+
+            function showOrderList() {
+                clearAll(); // tømmer alle kort,før de blir "fylt"
+                document.getElementById("cardOrderList").innerHTML = /*html*/`
+            <div class="cardinner">
+                <ul>
+                    <li>Potet</li>
+                    <li>Salamander kjøtt</li>
+                    <li>Eggedosis koker</li>
+                    <li>3L tungtvann</li>
+                    <li>Parafin</li>
+                </ul>
+                `;
+            }
+
+
+            function showGame() {
+                clearAll();
+                document.getElementById("theGame").innerHTML = /*html*/ `
+                    <div id="imgHead" class="kroppsdeler"></div>
+                    <div id="imgBody" class="kroppsdeler"></div>
+                    <div id="imgLegs" class="kroppsdeler"></div>
+                
+                    `
+            }
+
+            // selectHead1();
+            // selectBody();
+            // selectLegs();
+
+            function selectHead1() {
+                document.getElementById("imgHead").innerHTML = /*HTML*/ `
+            <button onclick="selectHead1()">◀</button>
+            <img src="img/head2.png" />
+            <button onclick="selectHead3()">▶</button>
+            
+            `;
+            }
+
+
+
+            function clearAll() {
+                document.getElementById("cardOrderList").innerHTML = '';
+                document.getElementById("theGame").innerHTML = '';
+            }
+
+
+
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    /* div {
+        color: red;
+    } */
+
+    .cardinner {
+        width: 150px;
+        background-color: lightgray;
+    }
+</style>
+
+<body>
+    <div id="app"></div>
+
+
+
+
+
+
+    <script>
+
+        let appDiv = document.getElementById("app");
+
+
+
+
+
+        // model
+        let colors = 'AliceBlue,AntiqueWhite,Aqua,Aquamarine,Azure,Beige,Bisque,Black,BlanchedAlmond,Blue,BlueViolet,Brown,BurlyWood,CadetBlue,Chartreuse,Chocolate,Coral,CornflowerBlue,Cornsilk,Crimson,Cyan,DarkBlue,DarkCyan,DarkGoldenrod,DarkGray,DarkGreen,DarkGrey,DarkKhaki,DarkMagenta,DarkOliveGreen,DarkOrange,DarkOrchid,DarkRed,DarkSalmon,DarkSeaGreen,DarkSlateBlue,DarkSlateGray,DarkSlateGrey,DarkTurquoise,DarkViolet,DeepPink,DeepSkyBlue,DimGray,DodgerBlue,FireBrick,FloralWhite,ForestGreen,Fuchsia,Gainsboro,GhostWhite,Gold,Goldenrod,Gray,Green,GreenYellow,Grey,Honeydew,HotPink,IndianRed,Indigo,Ivory,Khaki,Lavender,LavenderBlush,LawnGreen,LemonChiffon,LightBlue,LightCoral,LightCyan,LightGoldenrodYellow,LightGray,LightGreen,LightGrey,LightPink,LightSalmon,LightSeaGreen,LightSkyBlue,LightSlateGray,LightSlateGrey,LightSteelBlue,LightYellow,Lime,LimeGreen,Linen,Magenta,Maroon,MediumAquamarine,MediumBlue,MediumOrchid,MediumPurple,MediumSeaGreen,MediumSlateBlue,MediumSpringGreen,MediumTurquoise,MediumVioletRed,MidnightBlue,MintCream,MistyRose,Moccasin,NavajoWhite,Navy,OldLace,Olive,OliveDrab,Orange,OrangeRed,Orchid,PaleGoldenrod,PaleGreen,PaleTurquoise,PaleVioletRed,PapayaWhip,PeachPuff,Peru,Pink,Plum,PowderBlue,Purple,Rebeccapurple,Red,RosyBrown,RoyalBlue,SaddleBrown,Salmon,SandyBrown,SeaGreen,Seashell,Sienna,Silver,SkyBlue,SlateBlue,SlateGray,SlateGrey,Snow,SpringGreen,SteelBlue,Tan,Teal,Thistle,Tomato,Turquoise,Violet,Wheat,White,WhiteSmoke,Yellow,YellowGreen'
+
+        let cssColors = colors.split(',');
+        console.log(cssColors[3]);
+        console.log(cssColors[7]);
+
+        let random = Math.floor(Math.random() * cssColors.length);
+        let randomCssColor = cssColors[random];
+
+
+
+
+        // view
+        updateView();
+        function updateView() {
+            let html = '';
+            html += /*html*/`
+            <div class="cardinner"> stopper det her da ?     
+            
+                <ul>
+                    <li style="color: ${randomCssColor}" >Potet</li>
+                    <li style="color: ${randomCssColor}">Salamander kjøtt stekt altfor lenge</li>
+                    <li style="color: ${randomCssColor}">Eggedosis koker</li>
+                    <li style="color: ${randomCssColor}">3L tungtvann</li>
+                    <li style="color: ${randomCssColor}">Parafin</li>
+                </ul>
+                        <p> Luft her / eller tekst</p>
+                                <div>Her kan man også skrive noe
+                                      
+            </div>      
+            </div>      
+                
+                
+                
+                 
+         
+            
+            
+            <div>Arv slutt</div>
+            `
+
+            appDiv.innerHTML = html;
+
+        }
+        // Controller
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

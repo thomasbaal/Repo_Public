@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        width: 400px;
+    }
+
+    /* .btn {
+        width: 100%;
+    } */
+
+    .dialogBox {
+        width: 400px;
+        font-size: x-large;
+        color: black;
+        background-color: lightgray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header {
+        border: solid 1px lightgrey;
+    }
+</style>
+
+<body>
+    <button onclick="order()">Order</button>
+    <button onclick="orderSomethingElse()">Order Something Else</button>
+
+    <script>
+        function createDialogBox(headline, txt, btnText, color) {
+            const id = Math.random(Math.random() * 10);
+            document.body.innerHTML += `
+        <div id=${id} style="
+                background-color: aquamarine;
+                color: white;
+                border: solid 3px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;      
+                   
+        ">
+            <div style="
+                    background-color: ${color};
+                    border: solid 3px;
+                    border-radius: 30px;
+                    margin: 10px;
+                    width: 100%;
+                    text-align: center;
+        ">
+                <h3>${headline}<h3>
+            
+        </div>
+        <p style="padding: 10px;">                   
+                ${txt}
+        </p>            
+        
+        <p>
+            <button onclick="closeDialog(${id})" style="width: 300px">${btnText}</button>
+            
+        </div>    
+        </div>    
+       `;
+        }
+
+        function closeDialog(idToClose) {
+            document.getElementById(idToClose).outerHTML = '';
+        }
+
+        function order() {
+            createDialogBox('Bestillingen er nå i våre hender',
+                'Takk for bestillingen',
+                'ok',
+                'blue');
+        }
+
+
+        function orderSomethingElse(headline, txt, btnText, color) {
+            createDialogBox('Tex-Mex AlaCarte', 'Anbefaler ikke! å spise denne', 'er du helt sikker ?', 'red');
+
+        }
+
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

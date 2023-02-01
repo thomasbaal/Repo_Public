@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+
+    <p>Ferdighet 7 - Sette variabel til resultat av et regnestykke. </p>
+    <input id="tallA" type="range" min="1" max="100" step="1" oninput="calculate()" value="2" />
+    <input id="tallB" type="range" min="1" max="100" step="1" oninput="calculate()" value="2" />
+    <div id="resultat"></div>
+
+    <input id="sliderWithInput" type="range" min="1" max="1000" step="1" oninput="calcAll()" value="1"
+        style="width: 200px;" />
+    <input id="sliderHeightInput" type="range" min="1" max="1000" step="1" oninput="calcAll()" value="1"
+        style="width: 200px" />
+    <br />
+    <br />
+
+    <div id="kvadratResultat">Tekst her</div>
+    <br />
+    <div id="omkretsResultat">Tekst her</div>
+
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var tallAInput = document.getElementById('tallA');
+        var tallBInput = document.getElementById('tallB');
+
+        var kvadratDiv = document.getElementById('kvadratResultat');
+        var omkretsDiv = document.getElementById('omkretsResultat'); //2*bredde + 2*høyde
+        var slider1Input = document.getElementById('sliderWithInput');
+        var slider2Input = document.getElementById('sliderHeightInput');
+
+        calculate();
+
+        function calculate() {
+            var tallA = parseInt(tallAInput.value);
+            var tallB = parseInt(tallBInput.value);
+            var sum = tallA + tallB;
+            var differense = tallA - tallB;
+            var produkt = tallA * tallB;
+            var kvotient = tallA / tallB;
+            resultatDiv.innerHTML = '' +
+                tallA + '+' + tallB + '=' + sum + '<br />' +
+                tallA + '-' + tallB + '=' + differense + '<br />' +
+                tallA + '*' + tallB + '=' + produkt + '<br />' +
+                tallA + '/' + tallB + '=' + kvotient;
+        }
+
+        calcAll();
+        function calcAll() {
+            var slider1 = parseInt(slider1Input.value);
+            var slider2 = parseInt(slider2Input.value);
+            var kvadrat = slider1 * slider2;
+            var omkrets = (slider1 * slider1) + (slider2 + slider2);
+            kvadratResultat.innerHTML = `Valg 1: ${slider1}: Valg 2: ${slider2}: blir  ${kvadrat} Kvadrat Meter`;
+            omkretsResultat.innerHTML = `Valg 1: ${slider1}: Valg 2: ${slider2}: blir  ${omkrets} Meter i omkrets`;
+
+            console.log(kvadrat, slider1, slider2, omkrets);
+        }
+
+    </script>
+</body>
+
+</html>

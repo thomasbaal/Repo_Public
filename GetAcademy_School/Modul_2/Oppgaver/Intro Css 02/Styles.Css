@@ -1,0 +1,12 @@
+div{
+ background-color: lightblue;
+}
+
+div.blue {
+ background-color: aqua;
+ color: blue;
+ padding: 20px;
+ border: dashed 4px green;
+ margin: 20px;  
+ font-size: 50%;
+}

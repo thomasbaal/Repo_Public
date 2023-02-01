@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Undervisning_intro_til_objekter_ala_Javascript", "Undervisning_intro_til_objekter_ala_Javascript.csproj", "{C5715EF9-32E6-440A-9186-46229F7C59D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5715EF9-32E6-440A-9186-46229F7C59D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5715EF9-32E6-440A-9186-46229F7C59D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5715EF9-32E6-440A-9186-46229F7C59D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5715EF9-32E6-440A-9186-46229F7C59D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {467299C4-1D70-4C73-8F78-9EBF15582D4C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+
+
+    <script>
+
+
+
+        // model
+        var bunnTykk = document.getElementById("bunnTykkID");
+        var bunnTynn = document.getElementById("bunnTynnId");
+        var fyllTaco = document.getElementById("fyllTacoID");
+        var fyllKylling = document.getElementById("fyllKyllingID");
+        var fyllPepperoni = document.getElementById("fyllPepperoniID");
+        var strStor = document.getElementById("strStorID");
+        var strMiddels = document.getElementById("strMiddelsID");
+        var strLiten = document.getElementById("strLitenID");
+        var chkOrderButton = document.getElementById("btnBestill");
+        // bunnTykk.checked = "false";
+
+
+        // Radio select button switcher hvis de har samme "name" og du velger en av dem.
+        // view
+        updateView();
+        function updateView() {
+            document.getElementById("app").innerHTML = /*HTML*/ `
+        <p>Ferdighet 9f - Valgsetninger - Sammenligne flere ting på en gang (og og eller sammen)</p>
+    <h3>Pizza-bestilling</h3>
+    <div style="padding-bottom: 20px;">Gjør ett valg på hver linje:</div>
+
+    Bunn: <input id="bunnTykkID" type="radio" name="bunn" value="bunnTykk" onchange=checkOrder(this)/>Tykk
+    <input id="bunnTynnID" type="radio" name="bunn" onchange="checkOrder(this)" />Tynn <br />
+
+    Fyll: <input id="fyllTacoID" type="radio" name="fyll" onchange="checkOrder()" />Taco
+    <input id="fyllKyllingID" type="radio" name="fyll" onchange="checkOrder()" />Kylling
+    <input id="fyllPepperoniID" type="radio" name="fyll" onchange="checkOrder()" />Pepperoni<br />
+
+    Størrelse: <input id="strStorID" type="radio" name="str" onchange="checkOrder()" />Stor
+    <input id="strMiddelsID" type="radio" name="str" onchange="checkOrder()" />Middels
+    <input id="strLitenID" type="radio" name="str" onchange="checkOrder()" />Liten<br />
+
+    <button id="btnBestill" disabled="" onclick="alert('Bestilt!');">Bestill</button>
+    <button id="CheckIfChecked" onclick="isItChecked()">sjekk checked</button>
+
+
+        `
+        }
+
+
+        // controller
+
+        function checkOrder(x) {
+            console.log(x.checked);
+
+
+
+            updateView();
+        }
+
+    </script>
+</body>
+
+</html>

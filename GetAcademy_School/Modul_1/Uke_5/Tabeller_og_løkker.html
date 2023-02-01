@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Løkker og tabeller</h3>
+    <ul>
+        <li>Løkker</li>
+        <ul>
+            <li>while</li>
+            <li>for</li>
+        </ul>
+        <li>Tabeller - "Array"</li>
+    </ul>
+    <hr>
+
+    <script type="text/javascript">
+        // ----------- while loop
+        // var i = 1;
+        // while (i <= 3) {
+
+
+        //     document.write('Liam ');
+        //     i++;
+
+        // }
+
+        //-----------------------------------------------
+
+
+        var names = ['per', 'pål', 'Espen', 'null', 'Andrea', 'Cindy', 'Zelda', 'Cindy'];
+        // names.push = ('thomas');
+
+        document.write(names);
+        console.log(names);
+
+        names.length
+        document.write(names.length);
+        document.write('<br/>' + names[0]);
+        document.write('<br>' + names[1]);
+        document.write('<br/>' + names[0] + names[1] + '<br/>');
+
+
+        let count = 0;
+        for (i3 = 0; i3 <= names.length; i3++) {
+            count = i3;
+
+            if (names[i3] != null) {
+                count = i3;
+                document.write('Heisan ' + names[i3] + ' !<br/>');
+                // document.write('Array ' + 'names' + ' is ' + count + ' long');
+            }
+        }
+
+        var names = [];
+        names.push('Kleiv');
+        // names[17] = 'A'; //
+
+        run();
+        function run() {
+            const names = ['Cindy', 'joakim', 'lars', 'anders',]
+            // for (i = 0; i <= names.length; i++);
+            var i = 1;
+            while (i < 10) {
+                i++;
+                names.push('Thomas');
+                // names.push('fredrik');
+            }
+            console.log(names);
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+
+</html>

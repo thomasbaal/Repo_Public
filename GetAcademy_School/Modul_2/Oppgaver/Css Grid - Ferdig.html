@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    div.page{
+      height: 100vh;
+      display:grid;
+      grid-template-columns: 1fr 8fr;
+      grid-template-rows: 20px 10fr 20px;
+      grid-template-areas: 'menu header'
+                            'menu mainContent'
+                            'footer footer'
+    }
+
+    /* }
+  div.page{
+   height: 100vh;
+   display: grid;
+   grid-template-columns: 200px 1fr 100px;
+   grid-template-rows: 20px 10fr 20px;
+   grid-template-areas: 'menu header rightMenu'
+                        'menu mainContent rightMenu'
+                         'footer footer rightMenu';
+  } */
+    div.header {
+      background-color: aqua;
+      grid-area: header;
+    }
+
+    div.menu {
+      background-color: aquamarine;
+      grid-area: menu;
+    }
+
+    div.mainContent {
+      background-color: blanchedalmond;
+      grid-area: mainContent;
+    }
+
+    div.footer {
+      background-color: lightgray;
+      grid-area: footer;
+    }
+
+    @media only screen and (max-width: 800px) {
+      body {
+        background-color: lightblue;
+      }
+      /* div.page {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 1fr 4fr 20px;
+        grid-template-areas: 'header'
+                              'menu'
+                              'mainContent'
+                              'footer';
+      } */
+    } */
+
+    /* div.rightMenu{
+   background-color: blueviolet;
+   grid-area: rightMenu;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="header">Header</div>
+    <div class="menu">Menu</div>
+    <div class="mainContent">MainContent</div>
+    <div class="footer">Footer</div>
+    <!-- <div class="rightMenu">rightmenu</div> -->
+
+</body>
+
+</html>

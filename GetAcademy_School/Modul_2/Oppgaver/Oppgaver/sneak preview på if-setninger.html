@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="number" type="range" min="1" max="100" step="1" oninput="show()" />
+    <div id="info"></div>
+
+    <script>
+
+        //valueTxt = innhold fra input id number value
+        // show();
+
+        var valueTxt = document.getElementById('number').value; // output er string
+        var value = parseInt(valueTxt); // konverter fra string til value i ny variabel
+        console.log(typeof valueTxt, typeof value)
+        console.log(valueTxt)
+        console.log(value)
+
+        function show() {
+            let html = `<p>Tallet er ${value}</p>`; // skriv til html innholdet av value med TEMPLATE LITERAL
+            if (value < 50) html += '<p>Tallet er under 50</p>';
+            if (value > 50) html += '<p>Tallet er over 50</p>';
+            // document.getElementById('info').innerHTML = html; // samme som setning under
+            document.getElementById('info').innerHTML = `${html}`;
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

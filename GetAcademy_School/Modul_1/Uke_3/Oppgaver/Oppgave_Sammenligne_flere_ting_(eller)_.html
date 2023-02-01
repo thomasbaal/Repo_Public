@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .backColorbl {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <!-- <select>
+    <option value=${black}>Black</option>
+    <option value=${darkBlue}>darkBlue</option>
+    <option value=${lightGrey}>lightGrey</option>
+    <option value=${lightGreen}>lightGreen</option>
+    <option value=${lightRed}>lightRed</option>    
+<select name="droptDownName"><br/>
+
+   </select> -->
+
+    <script>
+        // model
+        let choosenColorDiv = 'Valgt Farge';
+        let colorStartText = 'Du har valgt - ';
+        let selectBoxColor = ['selected', '', '', '', '', ''];
+        let selectedColor;
+        // view
+
+        let newOption = new Option('Black');
+        updateView();
+        function updateView() {
+            document.getElementById('app').innerHTML = /*HTML*/ `
+                  
+        
+        
+                  <select id="selectBox" name="dropDownName" value="choosenColorDiv" onchange="choosenColorDiv = this.value; showSelectedColor()">
+                      <option ${selectBoxColor[0]}  value="none">ingen</option>
+                      <option ${selectBoxColor[1]} value="black">Svart</option>
+                      <option ${selectBoxColor[2]} value="darkBlue">Mørk Blå</option>
+                      <option ${selectBoxColor[3]} value="lightGrey">Lys Grå</option>
+                      <option ${selectBoxColor[4]} value="lightGreen">Lys Grønn</option>
+                      <option ${selectBoxColor[5]} value="pink">Lys Rød</option>
+                  </select>
+                  <div style="background-color:${choosenColorDiv}; color: white">${colorStartText +
+                (choosenColorDiv != 'pink' ? choosenColorDiv : 'lys rød')
+                }</div>
+
+               `;
+        }
+        function showSelectedColor() {
+            for (let i = 0; i < selectBoxColor.length; i++) {
+                selectBoxColor[i] = '';
+            }
+            let s = 'selected';
+            if (choosenColorDiv == 'none') selectBoxColor[0] = s;
+            if (choosenColorDiv == 'black') selectBoxColor[1] = s;
+            if (choosenColorDiv == 'darkBlue') selectBoxColor[2] = s;
+            if (choosenColorDiv == 'lightGrey') selectBoxColor[3] = s;
+            if (choosenColorDiv == 'lightGreen') selectBoxColor[4] = s;
+            if (choosenColorDiv == 'pink') selectBoxColor[5] = s;
+
+            console.log(selectedColor);
+            updateView();
+        }
+
+        // controller
+        function pickAColor(x) {
+            let selectedColor = x.value;
+            // selectedColor == 'black'
+            //   ? (choosenColorDiv =   'Sort')
+            //   : selectedColor == 'darkBlue'
+            //   ? (choosenColorDiv =   'Mørk Blå')
+            //   : selectedColor == 'lightGrey'
+            //   ? (choosenColorDiv =   'Lys Grå')
+            //   : selectedColor == 'lightGreen'
+            //   ? (choosenColorDiv =   'Lys Grønn')
+            //   : selectedColor == 'lightRed'
+            //   ? (choosenColorDiv =   'Lys Rød')
+            //   : //-------------------------------------------------------
+
+            // spørsmål, kan man utføre flere ting på en if setning if true,uten å kalle en ny funksjon ?.
+            // hvordan få tak i teksten til select option boks, se console. x.value
+            // henger samme nmed nr.2 :), må da finnes en bedre metode å sette valgt tekst farge ?.
+
+            // if (x.value == 'darkBlue') {
+            //   choosenColorDiv = colorStartText + 'Mørk Blå';
+            // }
+            // x.value;
+            // console.log(x);
+            // console.log(x.value); // darkBlue
+            // console.log(x.value.innerText);
+            // console.log(x.textContent);
+            // console.log(x.innerHTML); //
+            // //   <option value="none">ingen</option>
+            //   <option value="black">Svart</option>
+            //   <option value="darkBlue">Mørk Blå</option>
+            //   <option value="lightGrey">Lys Grå</option>
+            //   <option value="lightGreen">Lys Grønn</option>
+            //   <option value="lightRed">Lys Rød</option>
+
+            updateView();
+        }
+      // avslutte ternaryk hvis ikke
+      // div som viser bakgrunnsfarge, og endre bakgrunnsfarge
+      // if setning med || utrykk til å velge hvit forgrunnsfarge hvis valg bakgrunnsfarge er svart eller mørk blå.
+      // og svar forgrunn ellers.
+      // <select id="selectBox" name="dropDownName" onchange="colorBox(this.value)">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<style>
+    #main {
+                display: grid;
+        grid-template-columns: 50px 50px 50px 50px;
+        grid-template-rows: 50px 50px 50px 50px 50px;
+        grid-template-areas: "result result result result";
+                            
+    }
+
+    #result {
+        grid-area: result;
+        background: lightgray;
+
+    }
+
+    
+
+    #content {
+        grid-area: content;
+        background: #ddd;
+    }
+
+    div {
+        color: blue;
+        text-align: center;
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <div id="result"></div>
+        <div onclick="addCharacter(7)">7</div>
+        <div onclick="addCharacter(8)">8</div>
+        <div onclick="addCharacter(9)">9</div>
+        <div onclick="addCharacter('/')">/</div>
+        <div onclick="addCharacter(4)">4</div>
+        <div onclick="addCharacter(5)">5</div>
+        <div onclick="addCharacter(6)">6</div>
+        <div onclick="addCharacter('x')">*</div>
+        <div onclick="addCharacter(1)">1</div>
+        <div onclick="addCharacter(2)">2</div>
+        <div onclick="addCharacter(3)">3</div>
+        <div onclick="addCharacter('-')">-</div>
+        <div onclick="addCharacter(0)">0</div>
+        <div onclick="clearAll()">C</div>
+        <div onclick="calculate('=')">=</div>
+        <div onclick="addCharacter('+')">+</div>
+      
+    </div>
+
+    <script>
+        
+        var resultBox = document.getElementById("result");
+        var resultBoxData = resultBox.innerHTML;
+function addCharacter(x){
+    
+    
+    resultBox.innerHTML += x;
+}
+
+function clearAll(){
+    resultBox.innerHTML = '';
+}
+
+function calculate(){
+    var calculation = resultBox.innerHTML
+    .replace ('x', '*');
+resultBox.innerHTML = eval(calculation);
+console.log(calculate);
+}
+console.log(resultBox.innerHTML);
+
+console.log(resultBox.innerHTML);
+
+// if(resultBox.innerHTML !=''){}
+    </script>
+</body>

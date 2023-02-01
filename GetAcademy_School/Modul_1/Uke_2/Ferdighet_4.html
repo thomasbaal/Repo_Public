@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ferdighet.4</title>
+</head>
+
+<body>
+    <p>Ferdighet 4 - Variabel utenfor funksjon og innenfor funksjon, samt sette sammen tekst av flere deler</p>
+
+    <button onclick="tell()">Tell!</button>
+
+    <div id="info">Trykk på knappen!</div>
+
+
+    <script>
+        var tallA = 0;
+        var tekstA = 'TekstA';
+        console.log(tallA, tekstA);
+
+        function tell() {
+            var tallB = 0; // nullstiller seg hver gang     
+            // knappen blir trykket på.
+            var tekstB = 'TekstB';
+
+            tallA++;
+            tallB++;
+            tekstA += '*';
+            tekstB += '*';
+            // tekst i oransj under er kun labeler
+            document.getElementById('info').innerHTML =
+                'Tall A=' + tallA +
+                '<br/>Tall B=' + tallB +
+                '<br/>Tekst A=' + tekstA +
+                '<br/>Tekst B=' + tekstB;
+
+        }
+
+
+    </script>
+</body>
+
+</html>

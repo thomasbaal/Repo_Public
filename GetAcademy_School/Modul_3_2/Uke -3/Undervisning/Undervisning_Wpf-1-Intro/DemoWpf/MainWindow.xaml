@@ -1,0 +1,14 @@
+﻿<Window x:Class="DemoWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoWpf"
+        mc:Ignorable="d"
+        Title="Awesome ClickerApp" Height="79" Width="326">
+    <Grid Margin="0,0,16,12">
+        <Button x:Name="btnClick" Content="Click !" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="btnClick_Click"/>
+        <Label x:Name="lblClickCount" Content="" HorizontalAlignment="Left" Margin="91,10,0,0" VerticalAlignment="Top" Width="200" Background="#FF252526" Height="30" Foreground="#FFD8D3D3"/>
+
+    </Grid>
+</Window>

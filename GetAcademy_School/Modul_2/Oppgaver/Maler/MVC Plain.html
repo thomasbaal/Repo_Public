@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+
+
+    <script>
+
+
+        //MODEL
+        let textValue = '';
+        let txtOutput = '';
+        let rangeValue = '';
+        let rangeOutput = '';
+
+        //VIEW
+        view();
+        function view() {
+            document.getElementById('app').innerHTML = /*HTML*/`
+            <div> Div: ${txtOutput} </div>
+            <div> ${rangeOutput} </div>
+            <input type="text" oninput="textValue = this.value">
+            <input type="range" onchange="rangeValue = this.value">
+            <button onclick="showData()">send</button>
+            `
+        }
+        //CONTROLLER
+
+        function showData() {
+            txtOutput = textValue;
+            rangeOutput = rangeValue;
+            view();
+        }
+
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

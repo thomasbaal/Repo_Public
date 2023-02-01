@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Oppgave - Layout</title>
+ <style>
+  body {
+   padding: 5px;
+   margin: 0;
+   color: blue;
+  }
+
+  div.page {
+   height: 100vh;
+   display: grid;
+   grid-template-columns: 3fr 8fr;
+   grid-template-rows: 3fr 42fr 2fr;
+   grid-template-areas: 'header header'
+    'menu mainContent'
+    'footer footer'
+  }
+
+  div.header {
+   display: flex;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   font-size: 400%;
+   font-weight: bold;
+   background-color: rgb(118, 207, 237);
+   grid-area: header;
+  }
+
+  div.menu {
+   color: black;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   text-align: left;
+   padding: 20px;
+   font-size: 250%;
+   background-color: transparent;
+   grid-area: menu;
+  }
+
+  ul.menuList {
+   list-style-type: none;
+   }
+
+
+  a:link{
+
+   color: red;
+   background-color: transparent;
+   text-decoration: none;
+  }
+
+  a:visited {
+   color: rgb(242, 148, 148);
+   background-color: transparent;
+   text-decoration: none;
+
+  }
+  a:hover{
+   color: red;
+   background-color: transparent;
+   text-decoration: underline wavy blue 5px;
+  }
+
+
+  div.mainContent {
+   color: black;
+   padding: 20px;
+   font-size: 300%;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-weight: bold;
+   background-color: transparent;
+   grid-area: mainContent;
+  }
+
+  p.mainContent{
+   color: black;
+   font-size: 50%;
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: 200;
+  }
+  h2{
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 80%;
+   font-style: oblique;
+  }
+
+  div.footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   font-size: 200%;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   background-color: lightgray;
+   grid-area: footer;
+  }
+ </style>
+</head>
+
+<body>
+ <div class="page">
+  <div class="header">My website</div>
+  <div class="menu">Navigation
+   <ul class="menuList">
+    <li><a href="https://ikkeno.no/">Home</a></li>
+    <li><a href="https://ikkeno.no/">About</a></li>
+    <li><a href="https://ikkeno.no/">Contact</a></li>
+   </ul>
+  </div>
+  <div class="mainContent">Home page
+   <h2>Svensk flykaptein.</h2>
+   <p class="mainContent">    
+    En svensk flykaptein var på vei mot Gardermoen da han ble kalt opp av tårnet: "Vennligst oppgi Deres posisjon."
+    Svensken satt der taus som et levende spørsmålstegn. Tårnet gjentok: "Vennligst oppgi Deres posisjon."
+    Etter lang nøling svarte den svenske flykapteinen: "Jeg er kaptein og sitter lengst fremme i flyet ..."</p>
+    
+  </div>
+  <div class="footer">Copyright © 2014 Jake Wright.</div>
+</body>
+
+</html>

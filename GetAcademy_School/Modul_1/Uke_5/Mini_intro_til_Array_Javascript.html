@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+
+
+
+    <script>
+
+
+        // let persons = ['Per',
+        //     'Pål',
+        //     'Espen'
+        // ];
+        // let numbers = [1, 5, 8, 9];
+
+        // persons[0] = 'Askeladd';
+
+        let person1 = 'Per';
+        let person2 = 'Pål';
+        let person3 = 'Espen';
+        let person4 = 'Askeladd';
+
+        const persons = ['Per', 'Pål', 'Espen', 'Askeladd']
+        console.log(person1, person2, person3, person4,);
+        console.log(persons[3]);
+
+        persons[3] = 'Therese';
+        console.log('Etter endring ----- ', persons);
+
+        let newperson = 'Kåre'
+
+        persons.push(newperson)
+        console.log(persons);
+
+
+        persons.push('Hei')
+        console.log(persons);
+
+
+        persons.splice(1, 2);
+        console.log(persons);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="fileUploadId" type="file" onchange="getFile(this)"></input>
+    <script>
+        // Blob : Binary-Large-Object
+        // any binary object.
+        // they can be read as (text, or binary data)
+        // Blobs can represent data tha is not made in javascript native format.
+        // The file interface is based on Blob.
+
+        // using blobs:
+        // use the blob() constructor
+        // Blob.prototype.arrayBuffer() transforms the file into a stream and reads it to completion, it then returns a promise that resolves with an ArrayBuffer.
+        // Blob.prototype.text(), Transforms the File into a stream and reads it to completion. It returns a promise that resolves with a string (text).
+        // Blob.prototype.stream(), Transforms the File into a ReadableStream that can be used to read the File contents.
+        // Blob.prototype.slice([start[, end[, contentType]]]), Returns a new Blob object containing the data in the specified range of bytes of the source Blob.
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+// File objects are retreived from a "FileList" object returned as a result a user selecting files using the <input> element, or from drag and drop "DataTrasfer"         object.
+// File object is a specific kind of Blob, and can be used in any context that a blob can,: 
+// "Filereader", 
+// "Url,createObjectURL()", 
+// createImageBitmap(), XMLHttpReqest.send()
+// accepts both blons and files.
+// 
+// See mdn examples here: https://developer.mozilla.org/en-US/docs/Web/API/File_API/Using_files_from_web_applications
+
+//File implements "Blob", so it also has the following properties available to it.
+// File.prototype.size: Returns the size of the file in bytes.
+
+// See Also: File System Access API - https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API
+/////////////////////////////////////////////////////////////////////////////////////
+// Arraybuffer: Raw data.
+// ArrayBuffer is an array of bytes, often referred to in other languages as a "byte array"
+
+
+// Creating an example.
+
+
+async function getFile(fileUpload) {
+    console.log(fileUpload.value); // C:\fakepath\config.json
+    console.log(fileUpload.files[0]); // så man må spsifisere først "files", så index på hvem fil du skal sjekke, hvis man har hentet inn flere.
+
+    // så lager nå en variabel "byteArray" fra "this" som er nå kalt fileUpload, velger så filen.files , plukker ut fil med index 0, etter dette 
+    const byteArray = await fileUpload.files[0].arrayBuffer();
+    console.log(byteArray); //  ArrayBuffer(962) // 962 Bytes stemmer ganske bra.(på filen jeg testet med vel og merke.)
+
+    showImage('fileUploadId', byteArray); // kaller funksjonen showImage, med arguments 'fileUpload' som er navnet på (div id'n i dette tilfellet.) og variabelen byteArray.
+    console.log(byteArray);
+    
+
+
+}
+
+function showImage(idFromDiv, uploadedFile ) {
+    console.log({idFromDiv}, {uploadedFile}); // fileUploadId ArrayBuffer(94287)
+
+    
+}
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{27C01DDF-570D-4938-B71B-4E2D6E7D6B1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrownfieldLibrary", "BrownfieldLibrary\BrownfieldLibrary.csproj", "{6C14E4E9-C992-46E2-B5D6-0E8AD860F13E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27C01DDF-570D-4938-B71B-4E2D6E7D6B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C01DDF-570D-4938-B71B-4E2D6E7D6B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27C01DDF-570D-4938-B71B-4E2D6E7D6B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27C01DDF-570D-4938-B71B-4E2D6E7D6B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C14E4E9-C992-46E2-B5D6-0E8AD860F13E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C14E4E9-C992-46E2-B5D6-0E8AD860F13E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C14E4E9-C992-46E2-B5D6-0E8AD860F13E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C14E4E9-C992-46E2-B5D6-0E8AD860F13E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C073AB5C-D0A8-4198-A620-2765B9D080D9}
+	EndGlobalSection
+EndGlobal

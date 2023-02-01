@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yatzy</title>
+    <style>
+        body {
+
+
+position: absolute;
+width: 232px;
+height: 197px;
+left: 71px;
+top: 371px;
+
+background: #D9D9D9;
+        }
+
+        table {
+            border: 2px solid black; 
+            border-collapse: collapse;
+        }
+
+        tr, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 4px;
+            min-width: 50px;
+            height: 18px; 
+        }
+
+        td.label {
+            text-align: left;
+            min-width: 100px;
+        }
+    </style>
+</head>
+<body>
+||
+
+
+    <div id="scoreboard"></div>
+    <script>
+        showBoard()
+        function showBoard() {
+        let data = [
+                    {label: '', score: ['Per', 'Pål', 'Espen']},
+                    {label: 'Enere', score: ['', '', 3]},
+                    {label: 'Toere', score: ['', '', '']},
+                    {label: 'Treere', score: ['', '', '']},
+                    {label: 'Firere', score: ['', '', '']},
+                    {label: 'Femmere', score: ['', '', '']},
+                    {label: 'Seksere', score: ['', '', '']},
+                    {label: 'Sum', score: ['', '', '']}, 
+                    {label: 'Bonus', score: ['', '', '']},
+                    {label: '1 Par', score: ['', '', '']},
+                    {label: '2 Par', score: ['', '', '']},
+                    {label: '3 Like', score: ['', '', '']},
+                    {label: '4 Like', score: ['', '', '']},
+                    {label: 'Liten Straight', score: ['', '', '']}, 
+                    {label: 'Stor Straight', score: ['', '', '']},
+                    {label: 'Hus', score: ['', '', '']},
+                    {label: 'Sjanse', score: ['', '', '']},
+                    {label: 'Yatzy', score: ['', '', '']},
+                    {label: 'Totalsum', score: ['', '', '']},
+                
+                    ];
+    // under: bygd opp html i små seksjoner !
+          let html =  `<table>`;
+
+       
+                     
+                  
+        // brukt .length på to arrays samtidig, score vil vise undefined på alle som ikke har verdi, men dette er fikset med "score || ''"
+        for(let i = 0; i < data.length; i++) {
+            const row = data[i];
+            const score = row.score;
+            html += `<tr>  <td class="label">${row.label}</td>`;
+
+            for(let j = 0; j < score.length; j++ ) {
+                html += `<td>${score[j] || ''}`    
+                    
+            }
+                
+                  
+            //         <td>${row.score || ''}</td>
+            //     
+            // `
+        }
+            
+       html += '</table>' ;
+        document.getElementById("scoreboard").innerHTML = html;
+    }
+    </script>
+</body>
+</html>

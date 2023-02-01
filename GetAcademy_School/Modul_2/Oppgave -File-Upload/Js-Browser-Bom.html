@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Js Browser Bom</h1>
+<h3>The window object</h3>
+
+<ul>
+    <li>The window object is supported by all browsers. It represents the browser's window</li>
+    <li>All global javascript objects, functions, and variables automatically become members of the window object.</li>
+    <li>global variables are properties of the window object.</li>
+    <li>Global functions are ethods of the window object.</li>
+    <li>Even the document object (of the HTML DOM) is a property of the window object.</li>
+</ul>
+
+<ul>
+    <li>window.document.getElementById("app")</li>
+    <li>is the same as writing</li>
+    <li>document.getElementById("app")</li>
+</ul>
+
+<h3>Window size</h3>
+<ul>
+    <li>Two properties can be used to determine the size og the size of the browser window.</li>
+    <li>window.innerHeight - the innheight of the browser window</li>
+    <li>window.innerWidth - the inner width of the browser win (in pixels)</li>
+</ul>
+<h3>Window size example: See code</h3>
+<p id="windowSize"></p>
+
+<h3>Other window methods</h3>
+<ul>
+    <li>window.open</li>
+    <li>window.close()</li>
+    <li>window.moveTo()</li>
+    <li>window.resizeTo()</li>
+</ul>
+<hr>
+<h1>Js Screen</h1>
+<h4>The window.screen object contains information about the users's screen.</h4>
+<h3>Window screen</h3>
+
+
+<script>
+
+    document.getElementById("windowSize").innerHTML = 
+    "Browser inner window width: " + window.innerWidth + "pixels " +
+    "Browser inner window height " + window.innerHeight + "pixels ";
+
+
+
+</script>
+
+</body>
+</html>
