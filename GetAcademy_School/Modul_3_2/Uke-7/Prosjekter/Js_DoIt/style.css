@@ -1,0 +1,61 @@
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #222;
+    color: white;
+  }
+  
+  .todos {
+    padding: 1rem;
+    background-color: #eee;
+    overflow: auto;
+  }
+  
+  .todos ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .todos li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .todos li input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+  
+  .todos li button {
+    margin-left: auto;
+  }
+  
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #ddd;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  .footer button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
